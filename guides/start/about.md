@@ -8,7 +8,7 @@ The Wix CLI for Apps is a tool for building apps on the [Wix Platform](./platfor
 >
 > Currently, the CLI can be used for creating [dashboard pages](../framework/dashboard_pages.md). The CLI can also be used in conjunction with the [Developers Center](https://dev.wix.com/) to develop fully featured apps.
 >
-> We're actively working on improving the CLI, adding features, and providing comprehensive documentation. Help us improve the CLI by providing feedback and suggestions and join our community of Wix App developers on our [Discord server](https://discord.com/channels/773211030314418196/1110267293885267968).
+> We're actively working on improving the CLI, adding features, and providing comprehensive documentation. Help us improve the CLI by providing feedback and suggestions and join our community of Wix App developers on our [Discord server](https://discord.gg/8g3j7ENrMa).
 
 ## Wix Apps
 
