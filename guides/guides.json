@@ -59,6 +59,51 @@
           "isMdFile": true
         }
       ]
+    },
+    {
+      "title": "App Framework",
+      "articles": [
+        {
+          "name": "Framework Features",
+          "url": "./framework/framework_features.md",
+          "isMdFile": true
+        },
+        {
+          "name": "Dashboard Pages",
+          "url": "./framework/dashboard_pages.md",
+          "isMdFile": true
+        },
+        {
+          "name": "Working With Wix APIs",
+          "url": "./framework/working_with_wix_apis.md",
+          "isMdFile": true
+        },
+        {
+          "name": "Integrate Your Own Backend",
+          "url": "./framework/integrate_your_own_backend.md",
+          "isMdFile": true
+        }
+      ]
+    },
+    {
+      "title": "Workflow",
+      "articles": [
+        {
+          "name": "Development Sites",
+          "url": "./workflow/development_sites.md",
+          "isMdFile": true
+        },
+        {
+          "name": "App Versions and Deployment",
+          "url": "./workflow/app_versions_and_deployment.md",
+          "isMdFile": true
+        },
+        {
+          "name": "Integrate Existing Apps",
+          "url": "./workflow/integrate_with_existing_apps.md",
+          "isMdFile": true
+        }
+      ]
     }
   ]
 }

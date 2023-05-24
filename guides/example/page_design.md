@@ -2,7 +2,7 @@
 
 In the Business Buddy app, the **Products** page looks like this.
 
-![Business Buddy Product Chat](../images/tutorial_chat.png)
+![Business Buddy Product Chat](../../media/tutorial_chat.png)
 
 We create a design like this, one that is consistent with the rest of the pages in the dashboard, using the React components provided by the [Wix Design System](https://www.wixdesignsystem.com/).
 

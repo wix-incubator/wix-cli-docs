@@ -37,13 +37,13 @@ When building an app with the CLI, you can add pages to the site dashboard. It's
 
 The dashboard sidebar is where users navigate to the various pages in the dashboard. The sidebar is organized into categories and pages. Pages can be at the top level or nested under a category.
 
-![Dashboard sidebar structure](../images/dashboard_sidebar_structure.png)
+![Dashboard sidebar structure](../../media/dashboard_sidebar_structure.png)
 
 #### Dashboard toast
 
 A dashboard toast is a message that appears at the top of the dashboard.
 
-![Dashboard toast](../images/dashboard_toast.png)
+![Dashboard toast](../../media/dashboard_toast.png)
 
 ### Dashboard SDK
 
@@ -90,7 +90,7 @@ The [Wix Design System](https://www.wixdesignsystem.com/) is a library of [React
 
 Here is an example of a page built using components from the Wix Design System:
 
-![Design system example](../images/design_system_example.png)
+![Design system example](../../media/design_system_example.png)
 
 ## Wix SDK and APIs
 

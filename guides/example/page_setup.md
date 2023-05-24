@@ -2,7 +2,7 @@
 
 In the Business Buddy app, the pages appear in the dashboard with the following structure.
 
-![Sidebar structure](../images/tutorial_sidebar_structure.png)
+![Sidebar structure](../../media/tutorial_sidebar_structure.png)
 
 To create this structure, we:
 
@@ -19,7 +19,7 @@ Each file pair exists in a folder that determines the route to a page. So our ap
 
 Our app has two pages, but without any further configuration than what was described above, both pages would appear in the top level of the dashboard.
 
-![Sidebar pages](../images/tutorial_sidebar_pages.png)
+![Sidebar pages](../../media/tutorial_sidebar_pages.png)
 
 In our case, we want to configure them to show under a category in the dashboard sidebar so they look like they are part of the same app.
 
@@ -54,7 +54,7 @@ Now that we have a new category, we can add our pages to the category using the 
 
 At this point, we've configured our sidebar so we see the **Products** and **Settings** pages under the **Business Buddy** category.
 
-![Sidebar structure](../images/tutorial_sidebar_structure.png)
+![Sidebar structure](../../media/tutorial_sidebar_structure.png)
 
 ## Up next
 

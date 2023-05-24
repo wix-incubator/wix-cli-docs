@@ -2,7 +2,7 @@
 
 In this example, you'll learn how we built an app named Business Buddy. The app creates a dashboard chatbot connected to an AI. The AI answers questions about products in the site's store.
 
-![Business Buddy Product Chat](../images/tutorial_chat.png)
+![Business Buddy Product Chat](../../media/tutorial_chat.png)
 
 The app is built from:
 
