@@ -4,8 +4,18 @@
       "title": "Getting Started",
       "articles": [
         {
-          "name": "Overview",
-          "url": "./Overview.md",
+          "name": "Get Started/About the Wix CLI for Apps",
+          "url": "./start/about.md",
+          "isMdFile": true
+        },
+        {
+          "name": "Get Started/Quick Start",
+          "url": "./start/quick_start.md",
+          "isMdFile": true
+        },
+        {
+          "name": "Get Started/Platform Overview",
+          "url": "./start/platform_overview.md",
           "isMdFile": true
         }
       ]
