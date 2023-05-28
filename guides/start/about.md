@@ -1,6 +1,6 @@
 # Wix CLI for Apps
 
-The Wix CLI for Apps is a tool for building apps on the [Wix Platform](./platform_overview.md). It is a more streamlined alternative to building apps using the [Wix Developers Center](https://dev.wix.com/). The CLI provides you with a familiar developer experience including all the tooling and building blocks needed to create rich and powerful apps, with minimal setup and configuration. T he apps you develop empower millions of Wix users to take their sites and businesses to the next level.
+The Wix CLI for Apps is a tool for building apps on the [Wix Platform](./platform_overview.md). It is a more streamlined alternative to building apps using the [Wix Developers Center](https://dev.wix.com/). The CLI provides you with a familiar developer experience including all the tooling and building blocks needed to create rich and powerful apps, with minimal setup and configuration. The apps you develop empower millions of Wix users to take their sites and businesses to the next level.
 
 > **Developer Preview**
 >
