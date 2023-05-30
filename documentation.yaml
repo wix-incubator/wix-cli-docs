@@ -1,0 +1,37 @@
+apiDoc:
+  title: Wix CLI for Apps
+  docs:
+    - file: ./start/about.md
+      title: About the Wix CLI for Apps
+    - file: ./start/quick_start.md
+      title: Quick Start
+    - file: ./start/platform_overview.md
+      title: Platform Overview
+    - file: ./example/introduction.md
+      title: Example Introduction
+    - file: ./example/page_setup.md
+      title: Page Setup
+    - file: ./example/page_design.md
+      title: Page Design
+    - file: ./example/page_functionality_wix_sdk.md
+      title: Wix SDK
+    - file: ./example/page_functionality_dashboard_sdk.md
+      title: Dashboard SDK
+    - file: ./example/page_functionality_backend.md
+      title: Communicate with the Backend
+    - file: ./example/backend_receiving_requests.md
+      title: Receive Backend Requests
+    - file: ./framework/framework_features.md
+      title: Framework Features
+    - file: ./framework/dashboard_pages.md
+      title: Dashboard Pages
+    - file: ./framework/working_with_wix_apis.md
+      title: Working With Wix APIs
+    - file: ./framework/integrate_your_own_backend.md
+      title: Integrate Your Own Backend
+    - file: ./workflow/development_sites.md
+      title: Development Sites
+    - file: ./workflow/app_versions_and_deployment.md
+      title: App Versions and Deployment
+    - file: ./workflow/integrate_with_existing_apps.md
+      title: Integrate Existing Apps
