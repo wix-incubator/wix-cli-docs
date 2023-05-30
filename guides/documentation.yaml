@@ -1,7 +1,5 @@
 apiDoc:
   title: Wix CLI for Apps
-  description: Build Wix Apps with the Wix CLI
-  host: www.wixapis.com/apps
   docs:
     - file: ./start/about.md
       title: About the Wix CLI for Apps
