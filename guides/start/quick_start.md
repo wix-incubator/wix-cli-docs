@@ -19,7 +19,7 @@ Before getting started, make sure you have the following set up:
 - [Node.js](https://nodejs.org/en/) (v16.20.0 or higher)
 - `npm` or `yarn`
 - macOS, Linux, or Windows
-- A Wix Developer Account - [Sign up here](https://users.wix.com/signin?loginDialogContext=signup&referralInfo=HEADER&postLogin=https:%2F%2Fdev.wix.com%2Fdc3%2Fmy-apps&postSignUp=https:%2F%2Fdev.wix.com%2Fdc3%2Fmy-apps&forceRender=true)
+- A Wix Developer account - [Sign up here](https://users.wix.com/signin?loginDialogContext=signup&referralInfo=HEADER&postLogin=https:%2F%2Fdev.wix.com%2Fdc3%2Fmy-apps&postSignUp=https:%2F%2Fdev.wix.com%2Fdc3%2Fmy-apps&forceRender=true)
 
 ## Create a new app project
 
@@ -76,30 +76,26 @@ npm run dev
 yarn dev
 ```
 
-This starts a local development environment that serves your app. Follow the prompts to open the generated dashboard page in your browser. The development environment is set up for hot reloading, so any changes you make to your code will be reflected in the browser.
+This starts a local development environment that serves your app. Follow the prompts to open the generated dashboard page in your browser.
+
+Click the **Show a toast** button to see a toast open at the top of the page.
+
+The development environment is set up for hot reloading, so any changes you make to your code will be reflected in the browser.
 
 Let's make a small change in the boilerplate code to see how you edit your project:
 
 1. Open the `src/dashboard/pages/page.tsx` file.
-1. Add this `import` to the top of the file.
+1. Replace the button `onClick` event handler with:
    ```tsx
-   import { showToast } from '@wix/dashboard-sdk';
+    onClick={() => {
+      showToast({
+        message: 'My second toast message!',
+        type: 'success',
+      });
+    }}
    ```
-1. Replace the current button with this button that includes an `onClick` event handler:
-   ```tsx
-   <Button
-     onClick={() => {
-       showToast({
-         message: 'A toast for our new Wix App!',
-         type: 'success',
-       });
-     }}
-   >
-     Toast Button
-   </Button>
-   ```
-1. Save the file and go back to the browser. Notice how the page now has the new button.
-1. Click the button. A toast message appears at the top of the dashboard page.
+1. Save the file and go back to the browser.
+1. Click the button again to see the new toast message.
 
 To learn more about working with the Dashboard SDK and its different methods, see the [Dashboard SDK](https://dev.wix.com/api/client/dashboard-sdk/).
 

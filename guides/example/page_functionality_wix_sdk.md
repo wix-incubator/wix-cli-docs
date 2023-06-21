@@ -4,9 +4,17 @@ In the Business Buddy app, on the **Products** page, users can choose a product 
 
 To work with the Wix apps on a user's site, we use the [Wix SDK](https://dev.wix.com/api/sdk/sdk-setup:-wix-apps/set-up-the-wix-sdk).
 
+## Permissions
+
+Before getting started making calls to the SDK, you need to request the proper [permissions](../framework/working_with_wix_apis.md#api-permissions).
+
+You can find out which permissions your app needs by checking the API reference for the functions your call. Our app queries store products, so it needs the **Read Products** permission.
+
+You add permissions to your app in the [Developers Center](https://dev.wix.com/) by selecting your app and then going to the **Permissions** tab.
+
 ## Get products
 
-First, our app needs to get a list of products from the site's store.
+After setting up permissions, our app can get a list of products from the site's store.
 
 We start by importing and installing the following:
 
