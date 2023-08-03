@@ -17,7 +17,7 @@ The app demonstrates how to:
 
 - Build dashboard pages using:
   - [Wix Design System](https://www.wixdesignsystem.com/) React components
-  - [Wix Dashboard SDK](https://dev.wix.com/api/client/dashboard-sdk/)
+  - [Wix Dashboard SDK](https://dev.wix.com/docs/client/api-reference/dashboard-sdk/intro)
   - CSS
 - Work with Wix Apps such as Stores using the [Wix SDK for App Development](https://dev.wix.com/api/sdk/sdk-setup:-wix-apps/set-up-the-wix-sdk)
 - Work with external services, such as [OpenAI](https://openai.com/)
