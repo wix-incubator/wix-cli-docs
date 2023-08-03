@@ -47,7 +47,7 @@ A dashboard toast is a message that appears at the top of the dashboard.
 
 ### Dashboard SDK
 
-When building dashboard pages, you can use the [Dashboard SDK](https://dev.wix.com/api/client/dashboard-sdk) to interact with the dashboard from your app.
+When building dashboard pages, you can use the [Dashboard SDK](https://dev.wix.com/docs/client/api-reference/dashboard-sdk/intro) to interact with the dashboard from your app.
 
 You can use the SDK to:
 

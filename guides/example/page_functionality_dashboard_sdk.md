@@ -2,7 +2,7 @@
 
 In the Business Buddy app, when a user changes the behavior setting on the **Settings** page, a toast is shown at the top of the dashboard page.
 
-To show toasts, update dashboard components based on state changes, and open and close dashboard modals, we use the [Wix Dashboard SDK](https://dev.wix.com/api/client/dashboard-sdk/).
+To show toasts, update dashboard components based on state changes, and open and close dashboard modals, we use the [Wix Dashboard SDK](https://dev.wix.com/docs/client/api-reference/dashboard-sdk/intro).
 
 ## Show a toast
 
