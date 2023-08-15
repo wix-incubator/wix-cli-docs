@@ -61,7 +61,7 @@ The page title. The title is used as the browser tab title and as the dashboard 
 
 #### additionalRoutes (optional)
 
-A list of routes that lead to this page (in addition to the main route defined by the [file path convention](#file-system-based-routing)). This is useful if you want to support multiple routes for the same page or for backwards compatibility.
+A list of routes that lead to this page (in addition to the main route defined by the [file path convention](#page-routes)). This is useful if you want to support multiple routes for the same page or for backwards compatibility.
 
 For example, if you want both `/products` and `/products/list` to lead to the same page.
 
@@ -75,7 +75,7 @@ Whether the page is shown in the sidebar. If `true`, the page is not shown in th
 
 ##### sidebar.categoryId (optional)
 
-The ID of the category to associate this page with, as defined in the [Sidebar Categories Configuration](#sidebar-categories-configuration).
+The ID of the category to associate this page with, as defined in the [sidebar categories configuration](#category-configuration).
 
 ##### sidebar.priority (optional)
 
@@ -135,10 +135,10 @@ src
 
 This app adds 4 pages to the dashboard:
 
-- Index page [`dashboard/pages/page.json`] - Route: `/`
-- Products page [`dashboard/pages/products/page.json`] - Route: `/products`
-- Analytics page [`dashboard/pages/products/analytics/page.json`] - Route: `/products/analytics`
-- Orders page [`dashboard/pages/orders/page.json`] - Route: `/orders`
+- Index page (`dashboard/pages/page.json`) - Route: `/`
+- Products page (`dashboard/pages/products/page.json`) - Route: `/products`
+- Analytics page (`dashboard/pages/products/analytics/page.json`) - Route: `/products/analytics`
+- Orders page (`dashboard/pages/orders/page.json`) - Route: `/orders`
 
 ## Sidebar Categories
 
@@ -195,3 +195,18 @@ The text to display as the category label in the sidebar.
 ##### priority (optional)
 
 The priority of the category in the sidebar. Determines the category location in relation to other app categories. Smaller numbers mean higher priority.
+
+## Add a new dashboard page
+
+To add a new dashboard page to your app:
+
+1. Create a new subfolder under `src/dashboard/pages` that will determine the route of your page.
+1. Add a new set of `page.json` and `page.tsx` [dashboard page files](#dashboard-page-files) to the subfolder you created.
+1. Add the page metadata to the `page.json` file.
+1. Add the page code to the `page.tsx` file.
+
+## Delete a dashboard page
+
+To delete an existing dashboard page from you app, delete the subfolder under `src/dashboard/pages` that contains your [dashboard page's files](#dashboard-page-files).
+
+> **Note**: If you've already [created a version](../workflow/app_versions_and_deployment.md#deployable-version) of your app, deleting a dashboard page's files from your project will not remove the registration of the dashboard page from the Wix Developers Center. To remove the registration, [create a new version](../workflow/app_versions_and_deployment.md#deployable-version) after deleting the [dashboard page's files](#dashboard-page-files).
