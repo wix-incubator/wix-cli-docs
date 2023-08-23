@@ -102,6 +102,11 @@
           "name": "Integrate Existing Apps",
           "url": "./workflow/integrate_with_existing_apps.md",
           "isMdFile": true
+        },
+        {
+          "name": "Testing",
+          "url": "./workflow/testing.md",
+          "isMdFile": true
         }
       ]
     }
