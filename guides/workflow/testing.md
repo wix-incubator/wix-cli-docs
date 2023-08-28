@@ -1,6 +1,6 @@
 # Testing
 
-Testing is essential for creating and keeping up functional Wix CLI code. With Wix CLI, you can easily use popular tools like Jest and Vitest for component tests.
+Testing is essential for creating and maintaining your application code. With Wix CLI, you can easily use popular tools like Jest and Vitest for component tests.
 
 These testing frameworks let you define expected behaviors for your code in different scenarios and then compare them with the actual outcomes.
 
