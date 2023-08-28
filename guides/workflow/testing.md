@@ -63,14 +63,10 @@ export default defineConfig({
 });
 ```
 
-Finally, create this file which sets up [Testing Library](https://testing-library.com/):
+Finally, create `src/test-setup.ts` which adds [Testing Library](https://testing-library.com/)'s matchers:
 
 ```typescript
-import { expect} from 'vitest';
-import matchers from '@testing-library/jest-dom/matchers';
 import '@testing-library/jest-dom/vitest';
-
-expect.extend(matchers);
 ```
 
 Once all this has been set up, here's a example test for a dashboard page:
@@ -155,7 +151,7 @@ module.exports = {
 };
 ```
 
-Finally, create `src/test-setup.ts` which sets up [Testing Library](https://testing-library.com/):
+Finally, create `src/test-setup.ts` which adds [Testing Library](https://testing-library.com/)'s matchers:
 
 ```typescript
 import '@testing-library/jest-dom';
