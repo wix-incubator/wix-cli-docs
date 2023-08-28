@@ -13,13 +13,13 @@ Vitest is a blazing fast unit test framework powered by Vite ([Learn more about 
 Following Vitest's [getting started guide](https://vitest.dev/guide/), you can start by installing Vitest:
 
 ```
-npm install -D vitest
+yarn install -D vitest
 ```
 
 Also, install `jsdom` which we'll need for simulating a browser-like environment:
 
 ```
-npm install -D jsdom
+yarn install -D jsdom
 ```
 
 Then, create the following `vitest.config.mjs` file at the root of your application:
@@ -47,7 +47,7 @@ Next, add the following script to your `package.json`:
 We recommend you use [Testing Library](https://testing-library.com/) for testing your UI components. To set it up, start by installing it:
 
 ```
-npm install -D @testing-library/jest-dom @testing-library/react
+yarn install -D @testing-library/jest-dom @testing-library/react
 ```
 
 Then, add the following to your `vitest.config.mjs`:
@@ -94,7 +94,7 @@ it('renders', () => {
 To set it up, start by installing its relevant dependencies:
 
 ```
-npm install -D jest jest-environment-jsdom @jest/globals ts-jest jsdom
+yarn install -D jest jest-environment-jsdom @jest/globals ts-jest jsdom
 ```
 
 Then, create the following `jest.config.js` file at the root of your application:
@@ -134,7 +134,7 @@ Next, add the following script to your `package.json`:
 We recommend you use [Testing Library](https://testing-library.com/) for testing your UI components. To set it up, start by installing it:
 
 ```
-npm install -D @testing-library/jest-dom @testing-library/react
+yarn install -D @testing-library/jest-dom @testing-library/react
 ```
 
 Then, add the following to your `jest.config.js`:
