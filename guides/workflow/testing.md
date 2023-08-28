@@ -94,7 +94,7 @@ it('renders', () => {
 To set it up, start by installing its relevant dependencies:
 
 ```
-yarn install -D jest jest-environment-jsdom @jest/globals ts-jest jsdom
+yarn install -D jest jest-environment-jsdom jsdom identity-obj-proxy @swc/core @swc/jest
 ```
 
 Then, create the following `jest.config.js` file at the root of your application:
@@ -109,12 +109,7 @@ module.exports = {
   },
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transform: {
-    '^.+\\.(mt|t|cj|j)s?x$': [
-      'ts-jest',
-      {
-        useESM: true,
-      },
-    ],
+    '^.+\\.(mt|t|cj|j)s?x$': ['@swc/jest'],
   },
 };
 ```
@@ -160,15 +155,10 @@ module.exports = {
 };
 ```
 
-Finally, create this file which sets up [Testing Library](https://testing-library.com/):
+Finally, create `src/test-setup.ts` which sets up [Testing Library](https://testing-library.com/):
 
 ```typescript
-import { expect } from '@jest/globals';
-import matchers from '@testing-library/jest-dom/matchers';
-import '@testing-library/jest-dom/jest-globals.js';
-
-expect.extend(matchers);
-
+import '@testing-library/jest-dom';
 ```
 
 Once all this has been set up, here's a example test for a dashboard page:
@@ -176,7 +166,6 @@ Once all this has been set up, here's a example test for a dashboard page:
 ```tsx
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { expect, it } from '@jest/globals';
 import Page from './page.js';
 
 it('renders', () => {
