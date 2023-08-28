@@ -39,7 +39,7 @@ Next, add the following script to your `package.json`:
 ```diff
 {
     "scripts": {
-+     "test:component": "vitest"
++     "test": "vitest"
     }
 }
 ```
@@ -126,7 +126,7 @@ Next, add the following script to your `package.json`:
 ```diff
 {
     "scripts": {
-+     "test:component": "yarn node --experimental-vm-modules $(yarn bin jest)"
++     "test": "yarn node --experimental-vm-modules $(yarn bin jest)"
     }
 }
 ```
