@@ -19,8 +19,8 @@ After setting up permissions, our app can get a list of products from the site's
 We start by importing and installing the following:
 
 ```tsx
-import { createClient } from '@wix/api-client';
-import { authStrategy } from '@wix/dashboard-sdk';
+import { createClient } from '@wix/sdk';
+import { dashboard } from '@wix/dashboard';
 import { products } from '@wix/stores';
 import { useQuery } from 'react-query';
 ```
@@ -29,14 +29,16 @@ These imports give us access to the Wix SDK, a way to authenticate, and the part
 
 ---
 
-Once imported, we create an SDK client that we'll use to make calls to the SDK functions. When creating a client, we use the Dashboard SDK `authStrategy()` function to authenticate our client and we also specify which modules we will use with the client. In our case, we only need the `products` module to access store products.
+Once imported, we create an SDK client that we'll use to make calls to the SDK functions. When creating a client, we use the `@wix/dashboard` module's `auth()` function to authenticate our client and we also specify which modules we will use with the client. In our case, we only need the `products` module to access store products and the `dashboard` module to work with dashboard pages. We also use the `@wix/dashboard` module's `host()` function to set the client's host.
 
 ```tsx
 const wixClient = createClient({
-  auth: authStrategy(),
+  auth: dashboard.auth(),
   modules: {
     products,
+    dashboard,
   },
+  host: dashboard.host(),
 });
 ```
 
