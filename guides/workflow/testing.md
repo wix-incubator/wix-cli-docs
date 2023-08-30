@@ -100,7 +100,6 @@ Then, create the following `jest.config.js` file at the root of your application
 module.exports = {
   testEnvironment: "jsdom",
   moduleNameMapper: {
-    '^(?!.*(\\.st\\.css))(\\.{1,2}/.*)\\.js$': '$2',
     '\\.(css|scss)$': 'identity-obj-proxy',
   },
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
