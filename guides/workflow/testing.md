@@ -125,15 +125,7 @@ module.exports = {
 This setup configures Jest with TypeScript support, as well as how to handle CSS imports. It also configures it to set up a browser-like environment with `jsdom`. To make sure Jest can handle images and other files, add the following file `__mocks__/fileMock.js`:
 
 ```javascript
-const path = require('path');
-
-module.exports = {
-  process(sourceText, sourcePath, options) {
-    return {
-      code: `module.exports = ${JSON.stringify(path.basename(sourcePath))};`,
-    };
-  },
-};
+module.exports = 'test-file-stub';
 ```
 
 Next, add the following script to your `package.json`:
