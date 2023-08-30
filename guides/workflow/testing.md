@@ -98,15 +98,26 @@ Then, create the following `jest.config.js` file at the root of your application
 ```javascript
 /** @type {import('jest').Config} */
 module.exports = {
-  testEnvironment: "jsdom",
+  // Creates a browser-like environment
+  // https://jestjs.io/docs/configuration/#testenvironment-string
+  testEnvironment: 'jsdom',
+
+  // Makes CSS and image imports act like they do outside of tests
+  // https://jestjs.io/docs/configuration/#modulenamemapper-objectstring-string--arraystring
   moduleNameMapper: {
     '\\.(css|scss)$': 'identity-obj-proxy',
-  },
-  extensionsToTreatAsEsm: ['.ts', '.tsx'],
-  transform: {
-    '^.+\\.(mt|t|cj|j)s?x$': ['@swc/jest'],
     '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
       '<rootDir>/__mocks__/fileMock.js',
+  },
+
+  // Add TypeScript extensions
+  // https://jestjs.io/docs/configuration/#extensionstotreatasesm-arraystring
+  extensionsToTreatAsEsm: ['.ts', '.tsx'],
+
+  // Transform TypeScript files before running them
+  // https://jestjs.io/docs/configuration/#transform-objectstring-pathtotransformer--pathtotransformer-object
+  transform: {
+    '^.+\\.(mt|t|cj|j)s?x$': ['@swc/jest'],
   },
 };
 ```
@@ -146,20 +157,30 @@ Then, add the following to your `jest.config.js`:
 ```diff
 /** @type {import('jest').Config} */
 module.exports = {
++  // Sets up @testing-library
++  // https://jestjs.io/docs/configuration/#setupfilesafterenv-array
 +  setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
+
+  // Creates a browser-like environment
+  // https://jestjs.io/docs/configuration/#testenvironment-string
   testEnvironment: 'jsdom',
+
+  // Makes CSS and image imports act like they do outside of tests
+  // https://jestjs.io/docs/configuration/#modulenamemapper-objectstring-string--arraystring
   moduleNameMapper: {
-    '^(?!.*(\\.st\\.css))(\\.{1,2}/.*)\\.js$': '$2',
     '\\.(css|scss)$': 'identity-obj-proxy',
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/__mocks__/fileMock.js',
   },
+
+  // Add TypeScript extensions
+  // https://jestjs.io/docs/configuration/#extensionstotreatasesm-arraystring
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
+
+  // Transform TypeScript files before running them
+  // https://jestjs.io/docs/configuration/#transform-objectstring-pathtotransformer--pathtotransformer-object
   transform: {
-    '^.+\\.(mt|t|cj|j)s?x$': [
-      'ts-jest',
-      {
-        useESM: true,
-      },
-    ],
+    '^.+\\.(mt|t|cj|j)s?x$': ['@swc/jest'],
   },
 };
 ```
