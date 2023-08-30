@@ -75,7 +75,7 @@ Once all this has been set up, here's a example test for a dashboard page:
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { expect, it } from 'vitest';
-import Page from './page.js';
+import Page from './page';
 
 it('renders', () => {
   render(<Page />, { legacyRoot: true });
@@ -98,7 +98,7 @@ Then, create the following `jest.config.js` file at the root of your application
 ```javascript
 /** @type {import('jest').Config} */
 module.exports = {
-  testEnvironment: 'jsdom',
+  testEnvironment: "jsdom",
   moduleNameMapper: {
     '^(?!.*(\\.st\\.css))(\\.{1,2}/.*)\\.js$': '$2',
     '\\.(css|scss)$': 'identity-obj-proxy',
@@ -106,11 +106,25 @@ module.exports = {
   extensionsToTreatAsEsm: ['.ts', '.tsx'],
   transform: {
     '^.+\\.(mt|t|cj|j)s?x$': ['@swc/jest'],
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$':
+      '<rootDir>/__mocks__/fileMock.js',
   },
 };
 ```
 
-This setup configures Jest with TypeScript support, as well as how to handle CSS imports. It also configures it to set up a browser-like environment with `jsdom`.
+This setup configures Jest with TypeScript support, as well as how to handle CSS imports. It also configures it to set up a browser-like environment with `jsdom`. To make sure Jest can handle images and other files, add the following file `__mocks__/fileMock.js`:
+
+```javascript
+const path = require('path');
+
+module.exports = {
+  process(sourceText, sourcePath, options) {
+    return {
+      code: `module.exports = ${JSON.stringify(path.basename(sourcePath))};`,
+    };
+  },
+};
+```
 
 Next, add the following script to your `package.json`:
 
@@ -162,7 +176,7 @@ Once all this has been set up, here's a example test for a dashboard page:
 ```tsx
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import Page from './page.js';
+import Page from './page';
 
 it('renders', () => {
   render(<Page />, { legacyRoot: true });
