@@ -13,13 +13,13 @@ Vitest is a blazing fast unit test framework powered by Vite ([Learn more about 
 Following Vitest's [getting started guide](https://vitest.dev/guide/), you can start by installing Vitest:
 
 ```
-yarn install -D vitest
+yarn add --dev vitest
 ```
 
 Also, install `jsdom` which we'll need for simulating a browser-like environment:
 
 ```
-yarn install -D jsdom
+yarn add --dev jsdom
 ```
 
 Then, create the following `vitest.config.mjs` file at the root of your application:
@@ -47,7 +47,7 @@ Next, add the following script to your `package.json`:
 We recommend you use [Testing Library](https://testing-library.com/) for testing your UI components. To set it up, start by installing it:
 
 ```
-yarn install -D @testing-library/jest-dom @testing-library/react
+yarn add --dev @testing-library/jest-dom @testing-library/react@^12.0.0
 ```
 
 Then, add the following to your `vitest.config.mjs`:
@@ -78,7 +78,7 @@ import { expect, it } from 'vitest';
 import Page from './page';
 
 it('renders', () => {
-  render(<Page />, { legacyRoot: true });
+  render(<Page />);
   expect(screen.getByText('Page Title')).toBeInTheDocument();
 });
 ```
@@ -90,7 +90,7 @@ it('renders', () => {
 To set it up, start by installing its relevant dependencies:
 
 ```
-yarn install -D jest jest-environment-jsdom jsdom identity-obj-proxy @swc/core @swc/jest
+yarn add --dev jest jest-environment-jsdom jsdom identity-obj-proxy @swc/core @swc/jest
 ```
 
 Then, create the following `jest.config.js` file at the root of your application:
@@ -141,7 +141,7 @@ Next, add the following script to your `package.json`:
 We recommend you use [Testing Library](https://testing-library.com/) for testing your UI components. To set it up, start by installing it:
 
 ```
-yarn install -D @testing-library/jest-dom @testing-library/react
+yarn add --dev @testing-library/jest-dom @testing-library/react@^12.0.0
 ```
 
 Then, add the following to your `jest.config.js`:
@@ -191,7 +191,7 @@ import { render, screen } from '@testing-library/react';
 import Page from './page';
 
 it('renders', () => {
-  render(<Page />, { legacyRoot: true });
+  render(<Page />);
   expect(screen.getByText('Page Title')).toBeInTheDocument();
 });
 ```
