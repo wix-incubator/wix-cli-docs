@@ -35,3 +35,5 @@ apiDoc:
       title: App Versions and Deployment
     - file: ./workflow/integrate_with_existing_apps.md
       title: Integrate Existing Apps
+    - file: ./workflow/testing.md
+      title: Testing
