@@ -1,14 +1,14 @@
 # Testing
 
-Testing is essential for creating and maintaining your application code. With Wix CLI, you can easily use popular tools like Jest and Vitest for component tests.
+Testing is essential for creating and maintaining your app code. With the Wix CLI, you can easily use popular tools like [Jest](https://jestjs.io/) and [Vitest](https://vitest.dev/) for component tests.
 
 These testing frameworks let you define expected behaviors for your code in different scenarios and then compare them with the actual outcomes.
 
-In the sections below, we'll show you how to set up specific testing frameworks with Wix CLI.
+In the sections below, you can see how to set up specific testing frameworks with the Wix CLI.
 
 ## Vitest
 
-Vitest is a blazing fast unit test framework powered by Vite ([Learn more about Vitest](https://vitest.dev/guide/why.html)).
+[Vitest](https://vitest.dev/) is a blazing fast unit test framework powered by Vite.
 
 Following Vitest's [getting started guide](https://vitest.dev/guide/), you can start by installing Vitest:
 
@@ -16,7 +16,7 @@ Following Vitest's [getting started guide](https://vitest.dev/guide/), you can s
 yarn add --dev vitest
 ```
 
-Also, install `jsdom` which we'll need for simulating a browser-like environment:
+Also, install `jsdom` which you need for simulating a browser-like environment:
 
 ```
 yarn add --dev jsdom
@@ -25,7 +25,7 @@ yarn add --dev jsdom
 Then, create the following `vitest.config.mjs` file at the root of your application:
 
 ```javascript
-import { defineConfig } from 'vitest/config'
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
@@ -87,7 +87,7 @@ it('renders', () => {
 
 [Jest](https://jestjs.io/) is a delightful JavaScript Testing Framework with a focus on simplicity.
 
-To set it up, start by installing its relevant dependencies:
+To set up Jest, start by installing its relevant dependencies:
 
 ```
 yarn add --dev jest jest-environment-jsdom jsdom identity-obj-proxy @swc/core @swc/jest
@@ -122,7 +122,7 @@ module.exports = {
 };
 ```
 
-This setup configures Jest with TypeScript support, as well as how to handle CSS imports. It also configures it to set up a browser-like environment with `jsdom`. To make sure Jest can handle images and other files, add the following file `__mocks__/fileMock.js`:
+This setup configures Jest with TypeScript support, defines how to handle CSS imports, and sets up a browser-like environment with `jsdom`. To make sure Jest can handle images and other files, add the following file `__mocks__/fileMock.js`:
 
 ```javascript
 module.exports = 'test-file-stub';
