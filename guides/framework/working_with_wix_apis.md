@@ -48,15 +48,15 @@ To install the Wix SDK, run one set of the following commands:
 #### npm
 
 ```bash
-npm install @wix/api-client
-npm install @wix/dashboard-sdk
+npm install @wix/sdk
+npm install @wix/dashboard
 ```
 
 #### yarn
 
 ```bash
-yarn add @wix/api-client
-yarn add @wix/dashboard-sdk
+yarn add @wix/sdk
+yarn add @wix/dashboard
 ```
 
 This installs the API Client and the Dashboard SDK, which you need to authenticate the client.
@@ -83,16 +83,16 @@ You can find a list of all the modules in the [SDK documentation](https://dev.wi
 
 Once you have everything installed, you need to import the functionality you want to use in your code.
 
-You will always need to import `createClient` and `authStrategy` since you use them to create an authenticated client.
+You will always need to import `createClient` and `dashboard` since you use them to create an authenticated client.
 
 ```ts
-import { createClient } from '@wix/api-client';
-import { authStrategy } from '@wix/dashboard-sdk';
+import { createClient } from '@wix/sdk';
+import { dashboard } from '@wix/dashboard';
 ```
 
 Depending on which functionality you need to use, also import the necessary modules.
 
-For example, to work store products, add the following import.
+For example, to work with store products, add the following import.
 
 ```ts
 import { products } from '@wix/stores';
@@ -102,14 +102,20 @@ import { products } from '@wix/stores';
 
 Once you have everything installed and imported, you need to create a client.
 
-In a dashboard component, you create a client by calling the `createClient()` function, using the `authStrategy()` function to define the authentication method, and include a list of all the modules you will use with the client.
+In a dashboard component, you create a client by calling the `createClient()` function, using:
+
+- The `dashboard.auth()` function to define the authentication method
+- A list of all the modules you will use with the client
+- The `dashboard.host()` host function to define a client host
 
 ```ts
 const wixClient = createClient({
-  auth: authStrategy(),
+  auth: dashboard.auth(),
   modules: {
+    dashboard
     products,
   },
+  host: dashboard.host(),
 });
 ```
 
@@ -126,7 +132,7 @@ const products = await wixClient.products
 
 ### Using REST APIS with the Wix SDK
 
-If you need to use a REST API that is not yet supported the SDK, you can still benefit from the simplified authentication of the SDK by using the SDK's `fetch()` function.
+If you need to use a REST API that is not yet supported by the SDK, you can still benefit from the simplified authentication of the SDK by using the SDK's `fetch()` function.
 
 The `fetch()` function is already bound to the Wix authentication strategy, so you don't need to do any additional authentication.
 

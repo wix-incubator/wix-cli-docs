@@ -88,7 +88,7 @@ Let's make a small change in the boilerplate code to see how you edit your proje
 1. Replace the button `onClick` event handler with:
    ```tsx
     onClick={() => {
-      showToast({
+      client.dashboard.showToast({
         message: 'My second toast message!',
         type: 'success',
       });
@@ -97,7 +97,7 @@ Let's make a small change in the boilerplate code to see how you edit your proje
 1. Save the file and go back to the browser.
 1. Click the button again to see the new toast message.
 
-To learn more about working with the Dashboard SDK and its different methods, see the [Dashboard SDK](https://dev.wix.com/docs/client/api-reference/dashboard-sdk/intro).
+To learn more about working with the Dashboard SDK and its different methods, see the [Dashboard SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard/setup).
 
 ## Build the app
 
