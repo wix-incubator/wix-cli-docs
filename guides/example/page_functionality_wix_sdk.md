@@ -19,7 +19,7 @@ After setting up permissions, our app can get a list of products from the site's
 We start by importing and installing the following:
 
 ```tsx
-import { createClient } from '@wix/api-client';
+import { createClient } from '@wix/sdk';
 import { authStrategy } from '@wix/dashboard-sdk';
 import { products } from '@wix/stores';
 import { useQuery } from 'react-query';
