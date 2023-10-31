@@ -16,7 +16,7 @@ To build a new app, you will:
 
 Before getting started, make sure you have the following set up:
 
-- [Node.js](https://nodejs.org/en/) (v16.20.0 or higher)
+- [Node.js](https://nodejs.org/en/) (v18.16.0 or higher)
 - `npm` or `yarn`
 - macOS, Linux, or Windows
 - A Wix Developer account - [Sign up here](https://users.wix.com/signin?loginDialogContext=signup&referralInfo=HEADER&postLogin=https:%2F%2Fdev.wix.com%2Fdc3%2Fmy-apps&postSignUp=https:%2F%2Fdev.wix.com%2Fdc3%2Fmy-apps&forceRender=true)
