@@ -30,7 +30,7 @@ In our previously created `withProvider.tsx` we will wrap our returned component
 import React from 'react';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { WixStyleReactProvider } from '@wix/design-system';
-+ import { withDashboard } from "@wix/dashboard-react";
++ import { withDashboard } from '@wix/dashboard-react';
 
 export function withProviders(Component: React.ComponentType) {
 -  return function () {
