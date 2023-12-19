@@ -46,7 +46,7 @@ export function withProviders(Component: React.ComponentType) {
 }
 ```
 
-Then, in your products page code add the following imports:
+Then, in our products page code add the following imports:
 
 ```tsx
 import { useWixModules } from '@wix/sdk-react';
