@@ -22,7 +22,7 @@ First, install the dependencies we'll need for working with the SDKs:
 npm install @wix/sdk-react @wix/dashboard-react @wix/stores react-query
 ```
 
-In out code, we start by wrapping our exported page component with the [`withDashboard`](TODO: link here) HOC. This will allow us to later use the [`useWixModules`](https://dev.wix.com/docs/sdk/api-reference/sdk-react/hooks#usewixmodules) hook to call Wix APIs.
+In our code, we start by wrapping our exported page component with the [`withDashboard`](TODO: link here) HOC. This will allow us to later use the [`useWixModules`](https://dev.wix.com/docs/sdk/api-reference/sdk-react/hooks#usewixmodules) hook to call Wix APIs.
 
 In our previously created `withProvider.tsx` we will wrap our returned component with `withDashboard`:
 
