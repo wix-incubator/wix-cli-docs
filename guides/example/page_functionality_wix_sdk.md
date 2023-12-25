@@ -54,7 +54,7 @@ import { products } from '@wix/stores';
 import { useQuery } from 'react-query';
 ```
 
-These imports give us access to the Wix SDK and the particular functionality we need from the SDK.
+These imports give us access to the Wix SDK overall and the particular functionality we need.
 
 ---
 
