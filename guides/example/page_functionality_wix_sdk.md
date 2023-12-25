@@ -2,7 +2,7 @@
 
 In the Business Buddy app, on the **Products** page, users can choose a product from the site's Wix Store.
 
-To work with the Wix apps on a user's site, we use the [Wix Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard/react/introduction) and the [Wix React SDK](https://dev.wix.com/docs/sdk/api-reference/sdk-react/setup).
+To work with the Wix apps on a user's site, we use the [Wix Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard/react/introduction) and the [Wix React SDK](https://dev.wix.com/docs/sdk/api-reference/sdk-react/setup). We already showed how to set up your page components with the Dashboard React SDK in [the previous section](https://dev.wix.com/docs/build-apps/developer-tools/cli/example-app-walkthrough/page-design). In this section, we'll use the React SDK to retrieve site data to display in the app.
 
 ## Permissions
 
@@ -16,37 +16,7 @@ You add permissions to your app in the [Developers Center](https://dev.wix.com/)
 
 After setting up permissions, our app can get a list of products from the site's store.
 
-First, install the dependencies we'll need for working with the SDKs:
-
-```
-npm install @wix/sdk-react @wix/dashboard-react @wix/stores react-query
-```
-
-In our code, we start by wrapping our exported page component with the [`withDashboard`](TODO: link here) HOC. This will allow us to later use the [`useWixModules`](https://dev.wix.com/docs/sdk/api-reference/sdk-react/hooks#usewixmodules) hook to call Wix APIs.
-
-In our previously created `withProvider.tsx` we will wrap our returned component with `withDashboard`:
-
-```diff
-import React from 'react';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { WixStyleReactProvider } from '@wix/design-system';
-+ import { withDashboard } from '@wix/dashboard-react';
-
-export function withProviders(Component: React.ComponentType) {
--  return function () {
-+  return withDashboard(function () {
-    return (
-      <WixStyleReactProvider>
-        <QueryClientProvider client={new QueryClient()}>
-          <Component />
-        </QueryClientProvider>
-      </WixStyleReactProvider>
-    );
-  };
-}
-```
-
-Then, in our products page code add the following imports:
+In our **Products** page code add the following imports. Make sure to install the packages as well:
 
 ```tsx
 import { useWixModules } from '@wix/sdk-react';
@@ -58,7 +28,7 @@ These imports give us access to the Wix SDK overall and the particular functiona
 
 ---
 
-Once we import everything, we'll use the `useWixModules()` hook create an initialized copy of the `products` module that we can use directly in our page component code. We retrieve the module's [`queryProducts()`](https://dev.wix.com/api/sdk/stores/products/queryproducts) function that we can use to access store products. 
+Once we import everything, we'll use the [`useWixModules()`](TODO) hook create an initialized copy of the `products` module that we can use directly in our page component code. We retrieve the `products` module's [`queryProducts()`](https://dev.wix.com/api/sdk/stores/products/queryproducts) function that we can use to access store products. 
 
 ```tsx
 const { queryProducts } = useWixModules(products);
