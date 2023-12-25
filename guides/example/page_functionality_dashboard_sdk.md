@@ -12,7 +12,6 @@ First we need to import the [`useDashboard()`](TODO: link here) hook from the Da
 import { useDashboard } from '@wix/dashboard-react';
 ```
 
----
 
 Then, we need to call the `useDashboard` hook in whichever component we need to access dashboard APIs from. In our settings page component code we'll add the following:
 
