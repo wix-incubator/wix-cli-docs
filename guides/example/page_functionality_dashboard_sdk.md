@@ -13,7 +13,7 @@ import { useDashboard } from '@wix/dashboard-react';
 ```
 
 
-Then, we need to call the `useDashboard` hook in whichever component we need to access dashboard APIs from. In our settings page component code we'll add the following:
+Then, we need to call the `useDashboard()` hook in the code for the React component where we want to display the toast. We need to add the following to our **Settings** page component code:
 
 ```tsx
 const { showToast } = useDashboard();
