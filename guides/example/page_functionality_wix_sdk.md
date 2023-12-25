@@ -58,7 +58,7 @@ These imports give us access to the Wix SDK overall and the particular functiona
 
 ---
 
-Once imported, we can now intialize the `products` REST APIs module and use the returned `queryProducts` function to access store products. We'll use the `useWixModules` hook in our page component in the following manner:
+Once we import everything, we'll use the `useWixModules()` hook create an initialized copy of the `products` module that we can use directly in our page component code. We retrieve the module's [`queryProducts()`](https://dev.wix.com/api/sdk/stores/products/queryproducts) function that we can use to access store products. 
 
 ```tsx
 const { queryProducts } = useWixModules(products);
