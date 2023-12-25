@@ -68,7 +68,7 @@ const { queryProducts } = useWixModules(products);
 
 With our SDK set up, we can use it to query products from the site's Wix Store using the [`queryProducts()`](https://dev.wix.com/api/sdk/stores/products/queryproducts) function and handle any errors that might occur.
 
-Here, we query for products whose names start with whatever has been entered into our `AutoComplete` component.
+Here, we use the React `useQuery()` hook to query for products whose names start with whatever has been entered into our `AutoComplete` component. We also make sure to handle any errors.
 
 ```tsx
 const {
