@@ -19,6 +19,7 @@ Then, we need to call the `useDashboard()` hook in the code for the React compon
 const { showToast } = useDashboard();
 ```
 
+---
 Then, all we need to do is call the `showToast()` function and provide a message and type. In our app, we want to show the toast when a behavior setting has been successfully changed, so we call `showToast()` in the `onSuccess` of the mutation used by the **Save** button.
 
 ```tsx
