@@ -1,12 +1,12 @@
-# Wix SDK
+# Wix React SDKs
 
 In the Business Buddy app, on the **Products** page, users can choose a product from the site's Wix Store.
 
-To work with the Wix apps on a user's site, we use the [Wix SDK](https://dev.wix.com/api/sdk/sdk-setup:-wix-apps/set-up-the-wix-sdk).
+To work with the Wix apps on a user's site, we use the [Wix Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard-react/introduction) and the [Wix React SDK](https://dev.wix.com/docs/sdk/api-reference/sdk-react/setup). We already showed how to set up your page components with the Dashboard React SDK in [the previous section](https://dev.wix.com/docs/build-apps/developer-tools/cli/example-app-walkthrough/page-design). In this section, we'll use the React SDK to retrieve site data to display in the app.
 
 ## Permissions
 
-Before getting started making calls to the SDK, you need to request the proper [permissions](../framework/working_with_wix_apis.md#api-permissions).
+Before getting started making calls with the SDK, you need to request the proper [permissions](../framework/working_with_wix_apis.md#api-permissions).
 
 You can find out which permissions your app needs by checking the API reference for the functions your call. Our app queries store products, so it needs the **Read Products** permission.
 
@@ -16,35 +16,28 @@ You add permissions to your app in the [Developers Center](https://dev.wix.com/)
 
 After setting up permissions, our app can get a list of products from the site's store.
 
-We start by importing and installing the following:
+In our **Products** page code add the following imports. Make sure to install the packages as well:
 
 ```tsx
-import { createClient } from '@wix/sdk';
-import { authStrategy } from '@wix/dashboard-sdk';
+import { useWixModules } from '@wix/sdk-react';
 import { products } from '@wix/stores';
 import { useQuery } from 'react-query';
 ```
 
-These imports give us access to the Wix SDK, a way to authenticate, and the particular functionality we need from the SDK.
+These imports give us access to the Wix SDK overall and the particular functionality we need.
 
 ---
 
-Once imported, we create an SDK client that we'll use to make calls to the SDK functions. When creating a client, we use the Dashboard SDK `authStrategy()` function to authenticate our client and we also specify which modules we will use with the client. In our case, we only need the `products` module to access store products.
+Once we import everything, we'll use the [`useWixModules()`](https://dev.wix.com/docs/sdk/api-reference/sdk-react/hooks#usewixmodules) hook create an initialized copy of the `products` module that we can use directly in our page component code. We retrieve the `products` module's [`queryProducts()`](https://dev.wix.com/api/sdk/stores/products/queryproducts) function that we can use to access store products. 
 
 ```tsx
-const wixClient = createClient({
-  auth: authStrategy(),
-  modules: {
-    products,
-  },
-});
+const { queryProducts } = useWixModules(products);
 ```
 
 ---
 
-With our client set up, we can use it to query products from the site's Wix Store using the [`queryProducts()`](https://dev.wix.com/api/sdk/stores/products/queryproducts) function and handle any errors that might occur.
 
-Here, we query for products whose names start with whatever has been entered into our `AutoComplete` component.
+Here, we use the React `useQuery()` hook to query for products whose names start with whatever has been entered into our `AutoComplete` component. We also make sure to handle any errors.
 
 ```tsx
 const {
@@ -52,7 +45,7 @@ const {
   isLoading,
   error,
 } = useQuery(['products', searchQuery], () =>
-  wixClient.products.queryProducts().startsWith('name', searchQuery).find()
+  queryProducts().startsWith('name', searchQuery).find()
 );
 
 if (error) return <div>Something went wrong</div>;
