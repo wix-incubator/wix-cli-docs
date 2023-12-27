@@ -158,7 +158,7 @@ This ProductChat component uses the following CSS to define the width of the inp
 
 ### withProviders.tsx
 
-Finally, here is the code for the `QueryClientProvider` wrapper. We use the [`withDashboard()`](TODO) higher order component from the Wix [Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard/react/introduction) to wrap this component. This will allow us to make Wix SDK calls from inside the component's code.
+Finally, here is the code for the `QueryClientProvider` wrapper. We use the [`withDashboard()`](https://dev.wix.com/docs/sdk/api-reference/dashboard-react/with-dashboard) higher order component from the Wix [Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard/react/introduction) to wrap this component. This will allow us to make Wix SDK calls from inside the component's code.
 
 > **Note:** Make sure to install both the `@wix/dashboard-react` and `@wix/sdk-react` packages to use with this code.
 

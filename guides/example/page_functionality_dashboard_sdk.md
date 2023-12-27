@@ -2,11 +2,11 @@
 
 In the Business Buddy app, when a user changes the behavior setting on the **Settings** page, a toast is shown at the top of the dashboard page.
 
-To show toasts, update dashboard components based on state changes, and open and close dashboard modals, we use the [Wix Dashboard React SDK](TODO: ink here).
+To show toasts, update dashboard components based on state changes, and open and close dashboard modals, we use the [Wix Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard-react/introduction).
 
 ## Show a toast
 
-First we need to import the [`useDashboard()`](TODO: link here) hook from the Dashboard React SDK.
+First we need to import the [`useDashboard()`](https://dev.wix.com/docs/sdk/api-reference/dashboard-react/use-dashboard) hook from the Dashboard React SDK.
 
 ```tsx
 import { useDashboard } from '@wix/dashboard-react';
