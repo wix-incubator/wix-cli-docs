@@ -2,7 +2,7 @@
 
 In the Business Buddy app, on the **Products** page, users can choose a product from the site's Wix Store.
 
-To work with the Wix apps on a user's site, we use the [Wix Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard-react/introduction) and the [Wix React SDK](https://dev.wix.com/docs/sdk/api-reference/sdk-react/setup). We already showed how to set up your page components with the Dashboard React SDK in [the previous section](https://dev.wix.com/docs/build-apps/developer-tools/cli/example-app-walkthrough/page-design). In this section, we'll use the React SDK to retrieve site data to display in the app.
+To work with the Wix apps on a user's site, we use the [Wix Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard-react/introduction) and the [Wix React SDK](https://dev.wix.com/docs/sdk/api-reference/sdk-react/setup). We already showed how to set up your page extensions with the Dashboard React SDK in [the previous section](https://dev.wix.com/docs/build-apps/developer-tools/cli/example-app-walkthrough/page-design). In this section, we'll use the React SDK to retrieve site data to display in the app.
 
 ## Permissions
 
@@ -28,7 +28,7 @@ These imports give us access to the Wix SDK overall and the particular functiona
 
 ---
 
-Once we import everything, we'll use the [`useWixModules()`](https://dev.wix.com/docs/sdk/api-reference/sdk-react/hooks#usewixmodules) hook create an initialized copy of the `products` module that we can use directly in our page component code. We retrieve the `products` module's [`queryProducts()`](https://dev.wix.com/api/sdk/stores/products/queryproducts) function that we can use to access store products. 
+Once we import everything, we'll use the [`useWixModules()`](https://dev.wix.com/docs/sdk/api-reference/sdk-react/hooks#usewixmodules) hook create an initialized copy of the `products` module that we can use directly in our page extension code. We retrieve the `products` module's [`queryProducts()`](https://dev.wix.com/api/sdk/stores/products/queryproducts) function that we can use to access store products.
 
 ```tsx
 const { queryProducts } = useWixModules(products);
