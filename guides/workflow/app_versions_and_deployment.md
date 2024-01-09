@@ -56,7 +56,7 @@ npm run preview
 yarn preview
 ```
 
-This will create and display preview URLs for the various components in your app. You can send these URLs to team members who are [collaborators](https://support.wix.com/en/article/inviting-people-to-contribute-to-your-site) on your development site so they can preview and test changes. You can also use the preview URLs to test your app using browser testing tools like [Puppeteer](https://pptr.dev/), [Selenium](https://saucelabs.com/selenium-getting-started), or [Playwright](https://playwright.dev/).
+This will create and display preview URLs for the various extensions in your app. You can send these URLs to team members who are [collaborators](https://support.wix.com/en/article/inviting-people-to-contribute-to-your-site) on your development site so they can preview and test changes. You can also use the preview URLs to test your app using browser testing tools like [Puppeteer](https://pptr.dev/), [Selenium](https://saucelabs.com/selenium-getting-started), or [Playwright](https://playwright.dev/).
 
 ## Deployable version
 

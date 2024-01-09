@@ -1,12 +1,12 @@
 # App Framework Features
 
-The Wix App Framework is a React-based framework that allows you to build apps for Wix sites. The framework provides a way to define app components, their React based UI, styling and more.
+The Wix App Framework is a React-based framework that allows you to build apps for Wix sites. The framework provides a way to define app extensions, their React based UI, styling and more.
 
 The Wix App Framework is:
 
 - **React-based**: Use React components to define your app's UI. You can use React components from the [Wix Design System](https://www.wixdesignsystem.com/) to build your app's UI or bring your own components.
 - **Boilerplate-free**: You don't have to write any boilerplate code. Focus on your app's business logic and let the framework handle the rest.
-- **Declarative**: Define your app's components and their UI in a declarative manner using React and the app manifest.
+- **Declarative**: Define your app's extensions and their UI in a declarative manner using React and the app manifest.
 
 ## Vite
 
@@ -25,7 +25,7 @@ We suggest you read the [Vite Features Guide](https://vitejs.dev/guide/features.
 
 ## App manifest
 
-The app manifest is a declarative definition of your app's components and their UI, including:
+The app manifest is a declarative definition of your app's extensions and their UI, including:
 
 - Dashboard pages
 - Sidebar configurations

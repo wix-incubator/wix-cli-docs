@@ -31,7 +31,7 @@ To read more about adding permissions to your app, see [Adding Permissions to yo
 
 When developing [dashboard pages](dashboard_pages.md), your code can access APIs with the permissions of the currently logged in user, but scoped to the permissions your app has been granted.
 
-This means that the permissions available in a dashboard component's code are the intersection of the permissions your app has been granted and the permissions of the user that is currently logged in to the Wix Dashboard.
+This means that the permissions available in a dashboard extension's code are the intersection of the permissions your app has been granted and the permissions of the user that is currently logged in to the Wix Dashboard.
 
 ![Dashboard Permissions](../../media/dashboard_permissions.png)
 
