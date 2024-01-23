@@ -105,7 +105,7 @@ The content is defined as a [React](https://react.dev/) component that renders w
 
 Inside a dashboard page component you can use:
 
-- The [Dashboard SDK](https://dev.wix.com/docs/client/api-reference/dashboard-sdk/intro) to navigate users to pages in the dashboard, display modals, and send users alerts and updates using toasts.
+- The [Wix Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard-react/introduction) to navigate users to pages in the dashboard, display modals, and send users alerts and updates using toasts.
 - The [Wix Design System](https://www.docs.wixdesignsystem.com/?path=/story/getting-started--about) to use the same React components Wix uses to build its own dashboard pages.
 
 ### Page Routes
