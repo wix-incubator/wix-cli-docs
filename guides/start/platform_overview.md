@@ -45,9 +45,9 @@ A dashboard toast is a message that appears at the top of the dashboard.
 
 ![Dashboard toast](../../media/dashboard_toast.png)
 
-### Dashboard SDK
+### Wix Dashboard React SDK
 
-When building dashboard pages, you can use the [Dashboard SDK](https://dev.wix.com/docs/client/api-reference/dashboard-sdk/intro) to interact with the dashboard from your app.
+When building dashboard pages, you can use the [Wix Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard-react/introduction) to interact with the dashboard from your app.
 
 You can use the SDK to:
 

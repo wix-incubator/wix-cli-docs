@@ -97,7 +97,7 @@ Let's make a small change in the boilerplate code to see how you edit your proje
 1. Save the file and go back to the browser.
 1. Click the button again to see the new toast message.
 
-To learn more about working with the Dashboard SDK and its different methods, see the [Dashboard SDK](https://dev.wix.com/docs/client/api-reference/dashboard-sdk/intro).
+To learn more about working with the Dashboard SDK and its different methods, see the [Wix Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard-react/introduction).
 
 ## Build the app
 
@@ -170,5 +170,5 @@ You now have a fully working app that can be installed on Wix sites. Take some t
 Use the following resources to continue building you app:
 
 - [Dashboard Pages](../framework/dashboard_pages.md): Learn how to add new dashboard pages to your app, configure the dashboard sidebar, and more.
-- [Dashboard SDK](https://dev.wix.com/docs/client/api-reference/dashboard-sdk/intro): Learn how to interact with the Wix Dashboard using the Dashboard SDK.
+- [Wix Dashboard React SDK](https://dev.wix.com/docs/sdk/api-reference/dashboard-react/introduction): Learn how to interact with the Wix Dashboard using the Dashboard SDK.
 - [Wix Design System](https://wixdesignsystem.com): Learn how to use the Wix Design System to build beautiful Wix Apps.
