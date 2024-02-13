@@ -2,7 +2,7 @@
 type: task
 ---
 
-# Set up an Embedded Script Using the Wix CLI
+# Set up an Embedded Script Extension Using the Wix CLI
 
 An embedded script is an app extension that injects an HTML code fragment into the DOM of your users' websites. Unlike other extensions, embedded scripts are not fully configured during app installation, and require an additional setup step to embed the code fragment in the sites.
 
