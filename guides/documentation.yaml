@@ -37,3 +37,5 @@ apiDoc:
       title: Integrate Existing Apps
     - file: ./workflow/testing.md
       title: Testing
+    - file: ./extensions/embedded-scripts/embedded-script-task.md
+      title: Set up an Embedded Script Extension
