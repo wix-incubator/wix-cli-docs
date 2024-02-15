@@ -58,7 +58,7 @@ Every file in your project will be hosted and deployed by Wix. Your HTML code ca
 
 Wix will handle TypeScript files automatically.
 
-### Using dynamic parameters to your HTML code
+### Using dynamic parameters in your HTML code
 
 You can embed dynamic parameters in your code to inject custom information per site.
 
