@@ -36,7 +36,7 @@ Your file structure should look like this:
                   └── <your-script-name>
   ```
 
-## Step 2 - Add an HTML file with your script's code
+## Step 2 - Add an HTML file containing your script's code
 
 Inside the `<your-script-name>` folder, create a file named `embedded.html` containing the code you wish to inject. Your code will be added to the page's head or body depending on your configuration.
 
