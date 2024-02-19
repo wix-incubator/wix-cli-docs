@@ -7,6 +7,8 @@ apiDoc:
       title: Quick Start
     - file: ./start/platform_overview.md
       title: Platform Overview
+    - file: ./start/command_reference
+      title: Commands
     - file: ./example/introduction.md
       title: Example Introduction
     - file: ./example/page_setup.md
