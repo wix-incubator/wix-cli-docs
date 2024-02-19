@@ -58,6 +58,8 @@ Every file in your project will be hosted and deployed by Wix. Your HTML code ca
 
 Wix will handle TypeScript files automatically.
 
+When referencing local files in a <script> tag, the tag needs to have `type="module"`.
+
 ### Using dynamic parameters in your HTML code
 
 You can embed dynamic parameters in your code to inject custom information per site.
@@ -74,8 +76,11 @@ Dynamic parameters must be:
 * Wrapped in double curly braces. For example, `{{userName}}`.
 * Within a quote (") to avoid code evaluation.
 * Set using the [Embedded Scripts API](https://dev.wix.com/api/rest/app-management/apps/embedded-scripts/introduction).
+* Made up only of letters. (No special characters or spaces.)
 
-## Step 3 - Specify dynamic parameter values in testing (Optional)
+Dynamic parameter values must be strings.
+
+## Step 3 - Specify dynamic parameter values during development (Optional)
 
 In production, dynamic parameter values are set after installation by calling the Embed Script endpoint explained in Step 5.
 
@@ -139,15 +144,15 @@ This file must have the following structure
     "id": "1347ffed-668c-4133-9d90-510f58f02c33",
     "name": "console-logger",
     "scriptType": "FUNCTIONAL",
-    "placement": "BODY_END"
+    "placement": "HEAD"
   }
   ```
 
 * `id`  is a unique identifier for your script. For example, a randomly generated GUID.
-* `name` is the name of your script as it appears in the [Wix Developers Center](https://dev.wix.com/apps/my-apps). It can only contain letters and the hyphen (-) character.
+* `name` is the name of your script as it will appear in the [Wix Developers Center](https://dev.wix.com/apps/my-apps). It can only contain letters and the hyphen (-) character.
 * `scriptType` is an enum used by Wix's Cookie Consent Banner tool to determine whether site visitors consent to having your script run during their visit. Possible values are:
   * `"ESSENTIAL"`: Enables site visitors to move around the website and use essential features like secure and private areas crucial to the functioning of the site.
-  * `"FUNCTIONAL"`: Remembers choices site visitors make to improve their experience , such as language.
+  * `"FUNCTIONAL"`: Remembers choices site visitors make to improve their experience, such as language.
   * `"ANALYTICS"`: Provides statistics to the site owner on how visitors use the website, such as which pages they visit. This helps improve the website by identifying errors and performance issues.
   * `"ADVERTISING"`: Provides visitor information to the site owner to help market their products, such as data on the impact of marketing campaigns, re-targeted advertising, and so on.
 
