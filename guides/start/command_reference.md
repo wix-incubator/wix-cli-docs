@@ -2,7 +2,7 @@
 type: reference
 ---
 
-# CLI Commands for Apps
+# Wix CLI Commands for Apps
 
 This article documents the CLI commands for building apps on the [Wix Platform](https://dev.wix.com/docs/build-apps/developer-tools/cli/get-started/platform-overview).
 
