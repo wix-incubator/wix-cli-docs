@@ -143,7 +143,7 @@ Your file structure should look like this:
                       └── params.dev.json
   ```
 
-This file must have the following structure
+This file must have the following structure:
 
   ```tsx
   {
@@ -170,7 +170,6 @@ This file must have the following structure
   * `"HEAD"`: Injects the code between the page's `<head>` and `</head>` tags.
   * `"BODY_START"`: Injects the code immediately after the page's opening `<body>` tag.
   * `"BODY_END"`: Injects the code immediately before the page's closing `</body>` tag.
-
 
 
 ## Step 5 - Prepare your app to embed the script after installation
