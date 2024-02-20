@@ -60,6 +60,12 @@ Wix will handle TypeScript files automatically.
 
 When referencing local files in a `<script>` tag, the tag needs to have `type="module"`.
 
+For example, to reference a file named `local-script.js` in the same directory as `embedded.html’, use the following code:
+
+  ```tsx
+  <script type = "module" src = "./local-script.js"></script>
+  ```
+
 ### Using dynamic parameters in your HTML code
 
 You can embed dynamic parameters in your code to inject custom information per site.
