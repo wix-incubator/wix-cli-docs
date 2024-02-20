@@ -86,7 +86,7 @@ Dynamic parameters must be:
 
 Dynamic parameter values must be strings.
 
-## Step 3 - Specify dynamic parameter values during development (Optional)
+## Step 3 - Specify dynamic parameter values to use during development (Optional)
 
 In production, dynamic parameter values are set after installation by calling the Embed Script endpoint explained in Step 5.
 
