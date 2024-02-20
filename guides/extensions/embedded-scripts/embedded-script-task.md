@@ -58,7 +58,7 @@ Every file in your project will be hosted and deployed by Wix. Your HTML code ca
 
 Wix will handle TypeScript files automatically.
 
-When referencing local files in a <script> tag, the tag needs to have `type="module"`.
+When referencing local files in a `<script>` tag, the tag needs to have `type="module"`.
 
 ### Using dynamic parameters in your HTML code
 
