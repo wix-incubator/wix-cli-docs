@@ -109,7 +109,7 @@ When testing in your local development environment, you can specify values to as
     <script> console.log("Hello {{userName}} from the CLI. Your Google Tag ID is: {{googleTagId}}."); </script>
     ```
 
-    Requires a  params.dev.json in the following format:
+    Requires a params.dev.json file in the following format:
 
     ```tsx
     {
