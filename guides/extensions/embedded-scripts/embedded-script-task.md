@@ -75,7 +75,7 @@ Dynamic parameters must be:
 
 * Wrapped in double curly braces. For example, `{{userName}}`.
 * Within a quote (") to avoid code evaluation.
-* Set using the [Embedded Scripts API](https://dev.wix.com/api/rest/app-management/apps/embedded-scripts/introduction).
+* Set using the [Embedded Scripts API](https://dev.wix.com/api/rest/app-management/apps/embedded-scripts/introduction). This is explained in detail in step 5.
 * Made up only of letters. (No special characters or spaces.)
 
 Dynamic parameter values must be strings.
