@@ -106,10 +106,10 @@ When testing in your local development environment, you can specify values to as
    For example, for the code:
 
     ```tsx
-    <script> console.log("Hello {{userName}} from the CLI. Your Ggoogle Tag ID is: {{googleTagId}}."); </script>
+    <script> console.log("Hello {{userName}} from the CLI. Your Google Tag ID is: {{googleTagId}}."); </script>
     ```
 
-3. Make sure the params.dev.json is in the following format:
+    Requires a  params.dev.json in the following format:
 
     ```tsx
     {
@@ -118,7 +118,7 @@ When testing in your local development environment, you can specify values to as
     }
     ```
 
-4. Make sure the keys are the dynamic parameter names in quotes. The values will be assigned to the parameters when testing your script.
+Make sure the keys are the dynamic parameter names in quotes. The values will be assigned to the parameters when testing your script.
 
 ## Step 4 - Add configuration details for your embedded script
 
