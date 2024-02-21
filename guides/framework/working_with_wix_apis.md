@@ -104,7 +104,7 @@ Once you have everything installed and imported, you need to create a client.
 
 In a dashboard component, you create a client by calling the `createClient()` function that lists of all the modules you will use with the client.
 
-The client is initialized with a host object obtained from `dashboard.host()`. This is because the dashboard module is designed for use within the Wix platform environment and grants access to specific client side APIs, like [showToast](https://dev.wix.com/docs/sdk/api-reference/dashboard/show-toast).
+The client is initialized with a host object obtained from `dashboard.host()`. This is because the dashboard module is designed for use within the Wix platform environment and grants access to specific client side APIs, like [`showToast`](https://dev.wix.com/docs/sdk/api-reference/dashboard/show-toast).
 
 The `dashboard.auth()` authentication strategy provides an access token for the currently logged-in user in the Wix Dashboard. This token allows your code to access APIs using the permissions of the logged-in user, limited to the permissions granted to your app.
 
