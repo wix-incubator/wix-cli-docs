@@ -49,14 +49,14 @@ To install the Wix SDK, run one set of the following commands:
 
 ```bash
 npm install @wix/sdk
-npm install @wix/dashboard-sdk
+npm install @wix/dashboard
 ```
 
 #### yarn
 
 ```bash
 yarn add @wix/sdk
-yarn add @wix/dashboard-sdk
+yarn add @wix/dashboard
 ```
 
 This installs the SDK Client and the Dashboard SDK, which you need to authenticate the client.
@@ -87,7 +87,7 @@ You will always need to import `createClient` and `authStrategy` since you use t
 
 ```ts
 import { createClient } from '@wix/sdk';
-import { authStrategy } from '@wix/dashboard-sdk';
+import { authStrategy } from '@wix/dashboard';
 ```
 
 Depending on which functionality you need to use, also import the necessary modules.
