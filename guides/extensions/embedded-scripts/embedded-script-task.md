@@ -191,15 +191,15 @@ To use the `fetch` method in your app's dashboard page:
 1. Navigate to your `page.tsx` file in `src/dashboard/pages`.
 2. Add the following import statement at the top of your page:
 
-```tsx
-import { useWix } from "@wix/sdk-react";
-```
+  ```tsx
+  import { useWix } from "@wix/sdk-react";
+  ```
 
 3. Inside the `Index` method, add the following code:
 
-```tsx
-const { fetch } = useWix();
-```
+  ```tsx
+  const { fetch } = useWix();
+  ```
 
 4. Add the `fetch` call somewhere in your code.
 
@@ -207,20 +207,20 @@ For example, add a call to action with instructions to click a button to complet
 
 The `fetch` method call should follow the following format:
 
-  ```tsx
-  fetch('https://www.wixapis.com/apps/v1/scripts', {
-    method : 'post',
-    headers : {'content-type':'application/json'},
-    body : JSON.stringify({
-      "properties": {
-          "parameters": {
-              "<your-key-1>": "<your-value-1>",
-              "<your-key-2>": "<your-value-2>",
-          }
-      }
+    ```tsx
+    fetch('https://www.wixapis.com/apps/v1/scripts', {
+      method : 'post',
+      headers : {'content-type':'application/json'},
+      body : JSON.stringify({
+        "properties": {
+            "parameters": {
+                "<your-key-1>": "<your-value-1>",
+                "<your-key-2>": "<your-value-2>",
+            }
+        }
+      })
     })
-  })
-  ```
+    ```
 
 Ensure that the `"parameters"` section of the `body` contains all the dynamic parameters in your embedded script. Otherwise, you will get an error and your code will not be embedded.
 
