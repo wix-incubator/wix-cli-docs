@@ -83,11 +83,11 @@ You can find a list of all the modules in the [SDK documentation](https://dev.wi
 
 Once you have everything installed, you need to import the functionality you want to use in your code.
 
-You will always need to import `createClient` and `authStrategy` since you use them to create an authenticated client.
+You will always need to import `createClient` and `dashboard` since you use them to create an authenticated client.
 
 ```ts
 import { createClient } from '@wix/sdk';
-import { authStrategy } from '@wix/dashboard';
+import { dashboard } from '@wix/dashboard';
 ```
 
 Depending on which functionality you need to use, also import the necessary modules.
@@ -102,11 +102,14 @@ import { products } from '@wix/stores';
 
 Once you have everything installed and imported, you need to create a client.
 
-In a dashboard component, you create a client by calling the `createClient()` function, using the `authStrategy()` function to define the authentication method, and include a list of all the modules you will use with the client.
+In a dashboard component, you create a client by calling the `createClient()` function that lists of all the modules you will use with the client.
+
+The client is configured with a host object obtained from `dashboard.host()`, which provides access to specific client-side APIs within the Wix platform environment, like [`showToast`](https://dev.wix.com/docs/sdk/api-reference/dashboard/show-toast). The authentication strategy `dashboard.auth()` supplies an access token for the logged-in user in the Wix Dashboard. This token grants your code access to APIs based on the user's permissions, as granted to your app.
 
 ```ts
 const wixClient = createClient({
-  auth: authStrategy(),
+  host: dashboard.host(),
+  auth: dashboard.auth(),
   modules: {
     products,
   },
