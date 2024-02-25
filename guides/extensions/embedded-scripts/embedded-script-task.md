@@ -4,14 +4,14 @@ type: task
 
 # Set up an Embedded Script Extension Using the Wix CLI
 
-An embedded script is an app extension that injects an HTML code fragment into the DOM of your users' websites. Unlike other extensions, embedded scripts are not fully configured during app installation, and require an additional setup step to embed the code fragment in the sites.
+An embedded script is an app extension that injects an HTML code fragment into the DOM of your users' sites. Unlike other extensions, embedded scripts are not fully configured during app installation, and require an additional setup step to embed the code fragment in the sites.
 
 Follow the instructions below to:
 
 1. Define an embedded script extension for a Wix CLI app.
 2. Implement a method to embed the code fragment.
 
-Once this task is complete, your app will have an embedded script extension that injects its HTML code fragment into the DOM of your users' websites.
+Once this task is complete, your app will have an embedded script extension that injects its HTML code fragment into the DOM of your users' sites.
 
 ## Before you begin
 
@@ -19,8 +19,8 @@ Once this task is complete, your app will have an embedded script extension that
 
 ## Step 1 - Create a folder to contain your embedded script
 
-1. Navigate to your project's `src` folder and create a new folder named `website`.
-2. Inside the `website` folder create a new folder called `embedded-scripts`.
+1. Navigate to your project's `src` folder and create a new folder named `site`.
+2. Inside the `site` folder create a new folder called `embedded-scripts`.
 3. Inside the `embedded-scripts` folder create a folder named `<your-script-name>`.
 
 `<your-script-name>` will contain all the files for your embedded script.
@@ -31,7 +31,7 @@ Your file structure should look like this:
   .
   └── <your-embedded-script-app>/
       └── src/
-          └── website/
+          └── site/
               └── embedded-scripts/
                   └── <your-script-name>
   ```
@@ -46,7 +46,7 @@ Your file structure should look like this:
   .
   └── embedded-script-app/
       └── src/
-          └── website/
+          └── site/
               └── embedded-scripts/
                   └── <your-script-name>/
                       └── embedded.html
@@ -94,7 +94,7 @@ When testing in your local development environment, you can specify values to as
     .
     └── embedded-script-app/
         └── src/
-            └── website/
+            └── site/
                 └── embedded-scripts/
                     └── <your-script-name>/
                         ├── embedded.html
@@ -129,7 +129,7 @@ Your file structure should look like this:
   .
   └── embedded-script-app/
       └── src/
-          └── website/
+          └── site/
               └── embedded-scripts/
                   └── <your-script-name>/
                       ├── embedded.html
@@ -151,9 +151,9 @@ This file must have the following structure
 * `id`  is a unique identifier for your script. For example, a randomly generated GUID.
 * `name` is the name of your script as it will appear in the [Wix Developers Center](https://dev.wix.com/apps/my-apps). It can only contain letters and the hyphen (-) character.
 * `scriptType` is an enum used by Wix's Cookie Consent Banner tool to determine whether site visitors consent to having your script run during their visit. Possible values are:
-  * `"ESSENTIAL"`: Enables site visitors to move around the website and use essential features like secure and private areas crucial to the functioning of the site.
+  * `"ESSENTIAL"`: Enables site visitors to move around the site and use essential features like secure and private areas crucial to the functioning of the site.
   * `"FUNCTIONAL"`: Remembers choices site visitors make to improve their experience, such as language.
-  * `"ANALYTICS"`: Provides statistics to the site owner on how visitors use the website, such as which pages they visit. This helps improve the website by identifying errors and performance issues.
+  * `"ANALYTICS"`: Provides statistics to the site owner on how visitors use the site, such as which pages they visit. This helps improve the site by identifying errors and performance issues.
   * `"ADVERTISING"`: Provides visitor information to the site owner to help market their products, such as data on the impact of marketing campaigns, re-targeted advertising, and so on.
 
   > **About types**
@@ -225,4 +225,4 @@ You can also call the [Embed Script](https://dev.wix.com/docs/rest/api-reference
 
 ## Summary
 
-By following these instructions, you have configured an embedded script extension for your application and provided a method to embed its HTML code fragment on your users' websites. When site owners download your app and complete the setup process, your code will be injected into the DOM of every page on their website at the location you specified.
+By following these instructions, you have configured an embedded script extension for your application and provided a method to embed its HTML code fragment on your users' sites. When site owners download your app and complete the setup process, your code will be injected into the DOM of every page on their site at the location you specified.
