@@ -53,7 +53,7 @@ Your file structure should look like this:
   ```
 
 In your HTML code, you can:
-- Reference local files. ([See step 5](#step5))
+- Reference local files. ([See step 5](#step-5---referencing-local-files-in-your-html-code-optional))
 - Use dynamic parameters. ([See step 6](#step6))
 - Add global CSS. ([See step 7](#step7))
 
