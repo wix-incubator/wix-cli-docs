@@ -54,8 +54,8 @@ Your file structure should look like this:
 
 In your HTML code, you can:
 - Reference local files. ([See step 5](#step-5---referencing-local-files-in-your-html-code-optional))
-- Use dynamic parameters. ([See step 6](#step6))
-- Add global CSS. ([See step 7](#step7))
+- Use dynamic parameters. ([See step 6](#step-6---using-dynamic-parameters-in-your-html-code-optional))
+- Add global CSS. ([See step 7](#step-7---add-global-css-to-your-html-code-optional))
 
 ## Step 3 - Add configuration details for your embedded script
 
@@ -157,7 +157,7 @@ Ensure that the `"parameters"` section of the `body` contains all the dynamic pa
 
 You can also call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint from your server once the app is installed on a user's site. This will require an access token obtained through the [OAuth process](https://dev.wix.com/docs/build-apps/build-your-app/authentication/oauth).
 
-## Step 5 - Referencing local files in your HTML code (Optional) {#step5}
+## Step 5 - Referencing local files in your HTML code (Optional)
 
 Wix will host and deploy every file in your project unless you specify otherwise, including any that you add. Your HTML code can reference these files using a relative path. Your HTML code can reference these files using a relative path.
 
@@ -170,7 +170,7 @@ For example, to reference a file named `local-script.js` in the same directory a
   ```
 >**Note:** Wix will handle TypeScript files automatically.
 
-## Step 6 - Using dynamic parameters in your HTML code (Optional) {#step6}
+## Step 6 - Using dynamic parameters in your HTML code (Optional)
 
 You can embed dynamic parameters in your code to inject custom information per site.
 
@@ -190,7 +190,7 @@ Dynamic parameters must be:
 
 Dynamic parameter values must be strings.
 
-### Specify dynamic parameter values to use during development {#step7}
+### Specify dynamic parameter values to use during development
 
 In production, dynamic parameter values are set after installation by calling the Embed Script endpoint explained in Step 5.
 
