@@ -115,6 +115,8 @@ Site owners can call the [Embed Script](https://dev.wix.com/docs/rest/api-refere
 
 >**Note**: If an app has a dashboard page and an embedded script extension, site owners will automatically be directed to the app's dashboard page after installing the app.
 
+This API call is also used to specify the value of any dynamic parameters. For more information about using dynamic parameters see [step 6](#step-6---using-dynamic-parameters-in-your-html-code-optional).
+
 To use the `fetch` method in your app's dashboard page:
 
 1. Navigate to your `page.tsx` file in `src/dashboard/pages`.
