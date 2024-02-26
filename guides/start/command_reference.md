@@ -100,7 +100,7 @@ To learn more about app versions, see [App Versions and Deployment](../workflow/
 | -------------------- | ------------- | --------------------------------------------------------------------- |
 | `--version-type <type>`   | `-t <type>` | Specifies the type of version to create. <br><br> Accepted values for `<type>`: `major`, `minor`
 | `--approve-preview`   | `-y` | Automatically approves continuing with the publishing process after the preview is provided.
-| `--base-url <url>`     |   | Sets the base URL for uploading your static files to an external CDN. If this flag is not provided, the code for your preview will be hosted on Wix's servers.
+| `--base-url <url>`     |   | Sets the base URL for uploading your static files to an external CDN. If this flag is not provided, the code for your app will be hosted on Wix's servers.
 
 ## login
 
