@@ -234,18 +234,17 @@ Make sure the keys are the dynamic parameter names in quotes. The values will be
 
 You can add CSS directly to your `embedded.html` file, or you can reference a CSS stylesheet with a link. For example:
 
-    ```tsx
-    <link rel="stylesheet" href="./<your-css-file>.css"/>
-    ```
-    
+  ```tsx
+  <link rel="stylesheet" href="./<your-css-file>.css"/>
+  ```
+
 This CSS applies to your site globally, so the following code would make the background of every page of your site red:
 
-    ```tsx
-    #c1dmp {
+  ```tsx
+  #c1dmp {
         background: red;
     }
-    ```
-
+  ```
 
 ## Summary
 
