@@ -58,7 +58,13 @@ Every file in your project will be hosted and deployed by Wix. Your HTML code ca
 
 Wix will handle TypeScript files automatically.
 
-When referencing local files in a <script> tag, the tag needs to have `type="module"`.
+When referencing local files in a `<script>` tag, the tag needs to have `type="module"`.
+
+For example, to reference a file named `local-script.js` in the same directory as `embedded.html’, use the following code:
+
+  ```tsx
+  <script type = "module" src = "./local-script.js"></script>
+  ```
 
 ### Using dynamic parameters in your HTML code
 
@@ -75,12 +81,12 @@ Dynamic parameters must be:
 
 * Wrapped in double curly braces. For example, `{{userName}}`.
 * Within a quote (") to avoid code evaluation.
-* Set using the [Embedded Scripts API](https://dev.wix.com/api/rest/app-management/apps/embedded-scripts/introduction).
+* Set using the [Embedded Scripts API](https://dev.wix.com/api/rest/app-management/apps/embedded-scripts/introduction). This is explained in detail in step 5.
 * Made up only of letters. (No special characters or spaces.)
 
 Dynamic parameter values must be strings.
 
-## Step 3 - Specify dynamic parameter values during development (Optional)
+## Step 3 - Specify dynamic parameter values to use during development (Optional)
 
 In production, dynamic parameter values are set after installation by calling the Embed Script endpoint explained in Step 5.
 
@@ -106,10 +112,10 @@ When testing in your local development environment, you can specify values to as
    For example, for the code:
 
     ```tsx
-    <script> console.log("Hello {{userName}} from the CLI. Your Ggoogle Tag ID is: {{googleTagId}}."); </script>
+    <script> console.log("Hello {{userName}} from the CLI. Your Google Tag ID is: {{googleTagId}}."); </script>
     ```
 
-3. Make sure the params.dev.json is in the following format:
+    Requires a params.dev.json file in the following format:
 
     ```tsx
     {
@@ -118,7 +124,7 @@ When testing in your local development environment, you can specify values to as
     }
     ```
 
-4. Make sure the keys are the dynamic parameter names in quotes. The values will be assigned to the parameters when testing your script.
+Make sure the keys are the dynamic parameter names in quotes. The values will be assigned to the parameters when testing your script.
 
 ## Step 4 - Add configuration details for your embedded script
 
@@ -137,7 +143,7 @@ Your file structure should look like this:
                       └── params.dev.json
   ```
 
-This file must have the following structure
+This file must have the following structure:
 
   ```tsx
   {
@@ -166,7 +172,6 @@ This file must have the following structure
   * `"BODY_END"`: Injects the code immediately before the page's closing `</body>` tag.
 
 
-
 ## Step 5 - Prepare your app to embed the script after installation
 
 To finish setting up your embedded script, either you or the site owner must call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint to embed your script and update the values of the dynamic parameters in each app instance.
@@ -186,15 +191,15 @@ To use the `fetch` method in your app's dashboard page:
 1. Navigate to your `page.tsx` file in `src/dashboard/pages`.
 2. Add the following import statement at the top of your page:
 
-```tsx
-import { useWix } from "@wix/sdk-react";
-```
+  ```tsx
+  import { useWix } from "@wix/sdk-react";
+  ```
 
 3. Inside the `Index` method, add the following code:
 
-```tsx
-const { fetch } = useWix();
-```
+  ```tsx
+  const { fetch } = useWix();
+  ```
 
 4. Add the `fetch` call somewhere in your code.
 
@@ -202,20 +207,20 @@ For example, add a call to action with instructions to click a button to complet
 
 The `fetch` method call should follow the following format:
 
-  ```tsx
-  fetch('https://www.wixapis.com/apps/v1/scripts', {
-    method : 'post',
-    headers : {'content-type':'application/json'},
-    body : JSON.stringify({
-      "properties": {
-          "parameters": {
-              "<your-key-1>": "<your-value-1>",
-              "<your-key-2>": "<your-value-2>",
-          }
-      }
+    ```tsx
+    fetch('https://www.wixapis.com/apps/v1/scripts', {
+      method : 'post',
+      headers : {'content-type':'application/json'},
+      body : JSON.stringify({
+        "properties": {
+            "parameters": {
+                "<your-key-1>": "<your-value-1>",
+                "<your-key-2>": "<your-value-2>",
+            }
+        }
+      })
     })
-  })
-  ```
+    ```
 
 Ensure that the `"parameters"` section of the `body` contains all the dynamic parameters in your embedded script. Otherwise, you will get an error and your code will not be embedded.
 
