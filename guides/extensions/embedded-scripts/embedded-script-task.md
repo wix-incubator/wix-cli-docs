@@ -258,12 +258,12 @@ You can add CSS directly to your `embedded.html` file, or you can reference a CS
   <link rel="stylesheet" href="./<your-css-file>.css"/>
   ```
 
-This CSS applies to your site globally, so the following code would make the background of every page of your site red:
+This CSS applies to your site globally. For example, the following code would make the background of every page of your site red:
 
   ```tsx
   #c1dmp {
-        background: red;
-    }
+    background: red;
+  }
   ```
 
 ## Summary
