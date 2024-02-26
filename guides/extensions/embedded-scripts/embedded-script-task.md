@@ -182,8 +182,6 @@ If your app has a dashboard page, you have the option to shift responsibility fo
 
 Site owners can call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint using the `fetch` method from the [Wix React SDK](https://dev.wix.com/docs/sdk/api-reference/sdk-react/setup).
 
-By requiring site owners to complete the setup, you avoid the [OAuth access](https://dev.wix.com/docs/build-apps/build-your-app/authentication/oauth) requirements for an app.
-
 >**Note**: If an app has a dashboard page and an embedded script extension, site owners will automatically be directed to the app's dashboard page after installing the app.
 
 To use the `fetch` method in your app's dashboard page:
