@@ -85,7 +85,7 @@ This file must have the following structure:
   }
   ```
 
-* `id`  is a unique identifier for your script. For example, a randomly generated GUID.
+* `id`  is a unique identifier for your script. For example, a randomly generated GUID. This is the "component-
 * `name` is the name of your script as it will appear in the [Wix Developers Center](https://dev.wix.com/apps/my-apps). It can only contain letters and the hyphen (-) character.
 * `scriptType` is an enum used by Wix's Cookie Consent Banner tool to determine whether site visitors consent to having your script run during their visit. Possible values are:
   * `"ESSENTIAL"`: Enables site visitors to move around the site and use essential features like secure and private areas crucial to the functioning of the site.
@@ -103,11 +103,11 @@ This file must have the following structure:
   * `"BODY_END"`: Injects the code immediately before the page's closing `</body>` tag.
 
 
-## Step 4 - Prepare your app to embed the script after installation
+## Step 4 - Prepare your app to embed the HTML code fragment after installation
 
 To finish setting up your embedded script, either you or the site owner must call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint to embed your script and update the values of the dynamic parameters in each app instance.
 
-### Prompting the site owner to embed the script (recommended)
+### Prompting the site owner to embed the code (recommended)
 
 If your app has a dashboard page, you have the option to shift responsibility for this last configuration step onto site owners.
 
@@ -132,26 +132,46 @@ To use the `fetch` method in your app's dashboard page:
 
 4. Add the `fetch` call somewhere in your code.
 
-For example, add a call to action with instructions to click a button to complete setup for your app. Then, when the site owner clicks the button, they will call the `fetch` method.
+For example, add a call to action with instructions to click a button to complete setup for your app. Then, when the site owner clicks the button, they will call the fetch method.
 
-The `fetch` method call should follow the following format:
+If your app contains only one embedded script, the fetch method call should be in the following format:
 
-    ```tsx
-    fetch('https://www.wixapis.com/apps/v1/scripts', {
-      method : 'post',
-      headers : {'content-type':'application/json'},
-      body : JSON.stringify({
-        "properties": {
-            "parameters": {
-                "<your-key-1>": "<your-value-1>",
-                "<your-key-2>": "<your-value-2>",
-            }
+  ```tsx
+  fetch('https://www.wixapis.com/apps/v1/scripts', {
+    method : 'post',
+    headers : {'content-type':'application/json'},
+    body : JSON.stringify({
+      "properties": {
+        "parameters": {
+          "<your-key-1>": "<your-value-1>",
+          "<your-key-2>": "<your-value-2>",
         }
-      })
+      }
     })
-    ```
+  })
+  ```
 
-Ensure that the `"parameters"` section of the `body` contains all the dynamic parameters in your embedded script. Otherwise, you will get an error and your code will not be embedded.
+If your app contains more than one embedded script, you must also pass a `componentId` using the id value defined in your `embedded.json`. In this situation, your call should be in the following format:
+
+  ```tsx
+  fetch('https://www.wixapis.com/apps/v1/scripts', {
+    method : 'post',
+    headers : {'content-type':'application/json'},
+    body : JSON.stringify({
+      "properties": {
+        "parameters": {
+          "<your-key-1>": "<your-value-1>",
+          "<your-key-2>": "<your-value-2>",
+        }
+      },
+      "componentId": <your-component-id>
+    })
+  })
+  ```
+
+>**Note:** If you have only one script, passing its `componentId` will cause an error.
+
+Ensure that the parameters section of the body contains all the dynamic parameters in your embedded script. Otherwise, you will get an error and your code will not be embedded.
 
 ### Embedding a script as an app developer
 
