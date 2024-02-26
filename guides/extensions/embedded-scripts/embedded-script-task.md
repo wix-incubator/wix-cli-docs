@@ -52,81 +52,12 @@ Your file structure should look like this:
                       └── embedded.html
   ```
 
-### Referencing local files in your HTML code
+In your HTML code, you can:
+- Reference local files. ([See step 5](#step5))
+- Use dynamic parameters. ([See step 6](#step6))
+- Add global CSS. ([See step 7](#step7))
 
-Every file in your project will be hosted and deployed by Wix. Your HTML code can reference these files using a relative path.
-
-Wix will handle TypeScript files automatically.
-
-When referencing local files in a `<script>` tag, the tag needs to have `type="module"`.
-
-For example, to reference a file named `local-script.js` in the same directory as `embedded.html’, use the following code:
-
-  ```tsx
-  <script type = "module" src = "./local-script.js"></script>
-  ```
-
-### Using dynamic parameters in your HTML code
-
-You can embed dynamic parameters in your code to inject custom information per site.
-
-For example:
-
-  ```tsx
-  <meta name = "google-tag" id = "{{googleTag}}"></meta>
-  <script> console.log("Hello {{userName}} from the CLI.");</script>
-  ```
-
-Dynamic parameters must be:
-
-* Wrapped in double curly braces. For example, `{{userName}}`.
-* Within a quote (") to avoid code evaluation.
-* Set using the [Embedded Scripts API](https://dev.wix.com/api/rest/app-management/apps/embedded-scripts/introduction). This is explained in detail in step 5.
-* Made up only of letters. (No special characters or spaces.)
-
-Dynamic parameter values must be strings.
-
-## Step 3 - Specify dynamic parameter values to use during development (Optional)
-
-In production, dynamic parameter values are set after installation by calling the Embed Script endpoint explained in Step 5.
-
-When testing in your local development environment, you can specify values to assign to these parameters as follows:
-
-1. Inside the `<your-script-name>` folder, create a file named `params.dev.json`.
-
-   Your file structure should look like this:
-
-    ```tsx
-    .
-    └── embedded-script-app/
-        └── src/
-            └── site/
-                └── embedded-scripts/
-                    └── <your-script-name>/
-                        ├── embedded.html
-                        └── params.dev.json
-    ```
-
-2. Make sure this file includes an object containing key-value pairs for each of your dynamic parameters.
-
-   For example, for the code:
-
-    ```tsx
-    <script> console.log("Hello {{userName}} from the CLI. Your Google Tag ID is: {{googleTagId}}."); </script>
-    ```
-
-    Requires a params.dev.json file in the following format:
-
-    ```tsx
-    {
-      "userName": "Jerry",
-      "googleTagId": "GT-XXXXXXXXX"
-    }
-    ```
-
-Make sure the keys are the dynamic parameter names in quotes. The values will be assigned to the parameters when testing your script.
-
-## Step 4 - Add configuration details for your embedded script
+## Step 3 - Add configuration details for your embedded script
 
 Inside the `<your-script-name>` folder, create a file named `embedded.json`. 
 
@@ -172,7 +103,7 @@ This file must have the following structure:
   * `"BODY_END"`: Injects the code immediately before the page's closing `</body>` tag.
 
 
-## Step 5 - Prepare your app to embed the script after installation
+## Step 4 - Prepare your app to embed the script after installation
 
 To finish setting up your embedded script, either you or the site owner must call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint to embed your script and update the values of the dynamic parameters in each app instance.
 
@@ -225,6 +156,95 @@ Ensure that the `"parameters"` section of the `body` contains all the dynamic pa
 ### Embedding a script as an app developer
 
 You can also call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint from your server once the app is installed on a user's site. This will require an access token obtained through the [OAuth process](https://dev.wix.com/docs/build-apps/build-your-app/authentication/oauth).
+
+## Step 5 - Referencing local files in your HTML code (Optional) {#step5}
+
+Wix will host and deploy every file in your project unless you specify otherwise, including any that you add. Your HTML code can reference these files using a relative path. Your HTML code can reference these files using a relative path.
+
+When referencing local files in a `<script>` tag, the tag needs to have `type="module"`.
+
+For example, to reference a file named `local-script.js` in the same directory as `embedded.html’, use the following code:
+
+  ```tsx
+  <script type = "module" src = "./local-script.js"></script>
+  ```
+>**Note:** Wix will handle TypeScript files automatically.
+
+## Step 6 - Using dynamic parameters in your HTML code (Optional) {#step6}
+
+You can embed dynamic parameters in your code to inject custom information per site.
+
+For example:
+
+  ```tsx
+  <meta name = "google-tag" id = "{{googleTag}}"></meta>
+  <script> console.log("Hello {{userName}} from the CLI.");</script>
+  ```
+
+Dynamic parameters must be:
+
+* Wrapped in double curly braces. For example, `{{userName}}`.
+* Within a quote (") to avoid code evaluation.
+* Set using the [Embedded Scripts API](https://dev.wix.com/api/rest/app-management/apps/embedded-scripts/introduction). This is explained in detail in step 5.
+* Made up only of letters. (No special characters or spaces.)
+
+Dynamic parameter values must be strings.
+
+### Specify dynamic parameter values to use during development {#step7}
+
+In production, dynamic parameter values are set after installation by calling the Embed Script endpoint explained in Step 5.
+
+When testing in your local development environment, you can specify values to assign to these parameters as follows:
+
+1. Inside the `<your-script-name>` folder, create a file named `params.dev.json`.
+
+   Your file structure should look like this:
+
+    ```tsx
+    .
+    └── embedded-script-app/
+        └── src/
+            └── site/
+                └── embedded-scripts/
+                    └── <your-script-name>/
+                        ├── embedded.html
+                        └── params.dev.json
+    ```
+
+2. Make sure this file includes an object containing key-value pairs for each of your dynamic parameters.
+
+   For example, for the code:
+
+    ```tsx
+    <script> console.log("Hello {{userName}} from the CLI. Your Google Tag ID is: {{googleTagId}}."); </script>
+    ```
+
+    Requires a params.dev.json file in the following format:
+
+    ```tsx
+    {
+      "userName": "Jerry",
+      "googleTagId": "GT-XXXXXXXXX"
+    }
+    ```
+
+Make sure the keys are the dynamic parameter names in quotes. The values will be assigned to the parameters when testing your script.
+
+## Step 7 - Add global CSS to your HTML code (Optional)
+
+You can add CSS directly to your `embedded.html` file, or you can reference a CSS stylesheet with a link. For example:
+
+    ```tsx
+    <link rel="stylesheet" href="./<your-css-file>.css"/>
+    ```
+This CSS applies to your site globally, so the following code would make the background of every page of your site red:
+
+    ```tsx
+    #c1dmp {
+        background: red;
+    }
+    ```
+
 
 ## Summary
 
