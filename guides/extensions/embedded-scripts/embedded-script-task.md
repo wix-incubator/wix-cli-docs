@@ -1,5 +1,11 @@
 ---
-type: task
+articleType: task
+tags: 
+  extensions: 
+    - embeddedScript
+  devTools: 
+    - cli
+    - devCenter
 ---
 
 # Set up an Embedded Script Extension Using the Wix CLI
