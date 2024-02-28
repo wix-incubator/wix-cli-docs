@@ -1,5 +1,11 @@
 ---
-type: task
+articleType: task
+tags: 
+  extensions: 
+    - embeddedScript
+  devTools: 
+    - cli
+    - devCenter
 ---
 
 # Set up an Embedded Script Extension Using the Wix CLI
@@ -44,7 +50,7 @@ Your file structure should look like this:
 
   ```tsx
   .
-  └── embedded-script-app/
+  └── <your-embedded-script-app>/
       └── src/
           └── site/
               └── embedded-scripts/
@@ -64,7 +70,7 @@ Inside the `<your-script-name>` folder, create a file named `embedded.json`.
 Your file structure should look like this:
   ```tsx
   .
-  └── embedded-script-app/
+  └── <your-embedded-script-app>/
       └── src/
           └── site/
               └── embedded-scripts/
@@ -224,7 +230,7 @@ When testing in your local development environment, you can specify values to as
 
     ```tsx
     .
-    └── embedded-script-app/
+    └── <your-embedded-script-app>/
         └── src/
             └── site/
                 └── embedded-scripts/
