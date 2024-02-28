@@ -1,5 +1,8 @@
 ---
-type: reference
+articleType: reference
+tags: 
+  devTools: 
+    - cli
 ---
 
 # Wix CLI Commands for Apps
