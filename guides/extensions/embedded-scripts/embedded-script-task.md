@@ -127,13 +127,17 @@ To use the `fetch` method in your app's dashboard page:
 
 1. Navigate to your `page.tsx` file in `src/dashboard/pages`.
 2. Add the following import statement at the top of your page:
-  ```tsx
-  import { useWix } from "@wix/sdk-react";
-  ```
+
+   ```tsx
+    import { useWix } from "@wix/sdk-react";
+    ```
+
 3. Inside the `Index` method, add the following code:
-  ```tsx
-  const { fetch } = useWix();
-  ```
+
+    ```tsx
+    const { fetch } = useWix();
+    ```
+
 4. Add the `fetch` call somewhere in your code.
 
 For example, add a call to action with instructions to click a button to complete setup for your app. Then, when the site owner clicks the button, they will call the fetch method.
@@ -187,7 +191,7 @@ Wix will host and deploy every file in your project unless you specify otherwise
 
 When referencing local files in a `<script>` tag, the tag needs to have `type="module"`.
 
-For example, to reference a file named `local-script.js` in the same directory as `embedded.html’, use the following code:
+For example, to reference a file named `local-script.js` in the same directory as `embedded.html`, use the following code:
 
   ```tsx
   <script type = "module" src = "./local-script.js"></script>
