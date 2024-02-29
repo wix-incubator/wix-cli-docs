@@ -59,9 +59,9 @@ Your file structure should look like this:
   ```
 
 In your HTML code, you can:
-- Reference local files. ([See step 5](#referencing-local-files-in-your-html-code-optional))
-- Use dynamic parameters. ([See step 6](#using-dynamic-parameters-in-your-html-code-optional))
-- Add global CSS. ([See step 7](#add-global-css-to-your-html-code-optional))
+- Reference local files. (See [Referencing local files in your HTML code](#referencing-local-files-in-your-html-code-optional))
+- Use dynamic parameters. (See [Using dynamic parameters in your HTML code](#using-dynamic-parameters-in-your-html-code-optional))
+- Add global CSS. (See [Add global CSS to your HTML code](#add-global-css-to-your-html-code-optional))
 
 ## Step 3 - Add configuration details for your embedded script
 
@@ -121,7 +121,7 @@ Site owners can call the [Embed Script](https://dev.wix.com/docs/rest/api-refere
 
 >**Note**: If an app has a dashboard page and an embedded script extension, site owners will automatically be directed to the app's dashboard page after installing the app.
 
-This API call is also used to specify the value of any dynamic parameters. For more information about using dynamic parameters see [step 6](#using-dynamic-parameters-in-your-html-code-optional).
+This API call is also used to specify the value of any dynamic parameters. For more information about using dynamic parameters see (See [Using dynamic parameters in your HTML code](#using-dynamic-parameters-in-your-html-code-optional)).
 
 To use the `fetch` method in your app's dashboard page:
 
