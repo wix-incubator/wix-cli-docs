@@ -173,7 +173,7 @@ If your app contains more than one embedded script, you must also pass a `compon
   })
   ```
 
->**Note:** If you have only one script, passing its `componentId` will cause an error.
+> **Warning:** If your app only has 1 embedded script, don't pass the `componentId` in the request body. This action could lead to your app breaking in production. The `componentId` is only relevant for apps with more than 1 embedded script.
 
 Ensure that the `parameters` section of the `body` contains all the dynamic parameters in your embedded script. Otherwise, you will get an error and your code will not be embedded.
 
