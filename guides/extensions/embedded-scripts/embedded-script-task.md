@@ -59,9 +59,9 @@ Your file structure should look like this:
   ```
 
 In your HTML code, you can:
-- Reference local files. ([See step 5](#step-5---referencing-local-files-in-your-html-code-optional))
-- Use dynamic parameters. ([See step 6](#step-6---using-dynamic-parameters-in-your-html-code-optional))
-- Add global CSS. ([See step 7](#step-7---add-global-css-to-your-html-code-optional))
+- Reference local files. (See [Referencing local files in your HTML code](#referencing-local-files-in-your-html-code-optional))
+- Use dynamic parameters. (See [Using dynamic parameters in your HTML code](#using-dynamic-parameters-in-your-html-code-optional))
+- Add global CSS. (See [Add global CSS to your HTML code](#add-global-css-to-your-html-code-optional))
 
 ## Step 3 - Add configuration details for your embedded script
 
@@ -121,23 +121,19 @@ Site owners can call the [Embed Script](https://dev.wix.com/docs/rest/api-refere
 
 >**Note**: If an app has a dashboard page and an embedded script extension, site owners will automatically be directed to the app's dashboard page after installing the app.
 
-This API call is also used to specify the value of any dynamic parameters. For more information about using dynamic parameters see [step 6](#step-6---using-dynamic-parameters-in-your-html-code-optional).
+This API call is also used to specify the value of any dynamic parameters. For more information about using dynamic parameters see (See [Using dynamic parameters in your HTML code](#using-dynamic-parameters-in-your-html-code-optional)).
 
 To use the `fetch` method in your app's dashboard page:
 
 1. Navigate to your `page.tsx` file in `src/dashboard/pages`.
 2. Add the following import statement at the top of your page:
-
   ```tsx
   import { useWix } from "@wix/sdk-react";
   ```
-
 3. Inside the `Index` method, add the following code:
-
   ```tsx
   const { fetch } = useWix();
   ```
-
 4. Add the `fetch` call somewhere in your code.
 
 For example, add a call to action with instructions to click a button to complete setup for your app. Then, when the site owner clicks the button, they will call the fetch method.
@@ -177,7 +173,7 @@ If your app contains more than one embedded script, you must also pass a `compon
   })
   ```
 
->**Note:** If you have only one script, passing its `componentId` will cause an error.
+> **Warning:** If your app only has 1 embedded script, don't pass the `componentId` in the request body. This action could lead to your app breaking in production. The `componentId` is only relevant for apps with more than 1 embedded script.
 
 Ensure that the `parameters` section of the `body` contains all the dynamic parameters in your embedded script. Otherwise, you will get an error and your code will not be embedded.
 
@@ -185,7 +181,7 @@ Ensure that the `parameters` section of the `body` contains all the dynamic para
 
 You can also call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint from your server once the app is installed on a user's site. This will require an access token obtained through the [OAuth process](https://dev.wix.com/docs/build-apps/build-your-app/authentication/oauth).
 
-## Step 5 - Referencing local files in your HTML code (Optional)
+## Referencing local files in your HTML code (Optional)
 
 Wix will host and deploy every file in your project unless you specify otherwise, including any that you add. Your HTML code can reference these files using a relative path. Your HTML code can reference these files using a relative path.
 
@@ -196,9 +192,9 @@ For example, to reference a file named `local-script.js` in the same directory a
   ```tsx
   <script type = "module" src = "./local-script.js"></script>
   ```
->**Note:** Wix will handle TypeScript files automatically.
+>**Note:** TypeScript files are supported.
 
-## Step 6 - Using dynamic parameters in your HTML code (Optional)
+## Using dynamic parameters in your HTML code (Optional)
 
 You can embed dynamic parameters in your code to inject custom information per site.
 
@@ -258,7 +254,7 @@ When testing in your local development environment, you can specify values to as
 
 Make sure the keys are the dynamic parameter names in quotes. The values will be assigned to the parameters when testing your script.
 
-## Step 7 - Add global CSS to your HTML code (Optional)
+## Add global CSS to your HTML code (Optional)
 
 You can add CSS directly to your `embedded.html` file, or you can reference a CSS stylesheet with a link. For example:
 
