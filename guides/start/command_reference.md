@@ -122,8 +122,8 @@ wix logout
 Logs out of your Wix account.
 
 >**Note:** To switch to another Wix account:
->1. Use `wix logout`.
->2. Use `wix login`, then click the link provided.
+>1. Run `wix logout`.
+>2. Run `wix login`, then click the link provided.
 >3. Click **Log in with another account**.
 
 ## telemetry
