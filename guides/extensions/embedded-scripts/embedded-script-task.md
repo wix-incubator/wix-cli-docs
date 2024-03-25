@@ -108,87 +108,6 @@ This file must have the following structure:
   * `"BODY_START"`: Injects the code immediately after the page's opening `<body>` tag.
   * `"BODY_END"`: Injects the code immediately before the page's closing `</body>` tag.
 
-
-## Step 4 - Prepare your app to embed the HTML code fragment after installation
-
-To finish setting up your embedded script, either you or the site owner must call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint to embed your script and update the values of the dynamic parameters in each app instance.
-
-### Prompting the site owner to embed the code (recommended)
-
-If your app has a dashboard page, you have the option to shift responsibility for this last configuration step onto site owners.
-
-Site owners can call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint using the `fetch` method from the [Wix React SDK](https://dev.wix.com/docs/sdk/api-reference/sdk-react/setup).
-
->**Note**: If an app has a dashboard page and an embedded script extension, site owners will automatically be directed to the app's dashboard page after installing the app.
-
-This API call is also used to specify the value of any dynamic parameters. For more information about using dynamic parameters see (See [Using dynamic parameters in your HTML code](#using-dynamic-parameters-in-your-html-code-optional)).
-
-To use the `fetch` method in your app's dashboard page:
-
-1. Navigate to your `page.tsx` file in `src/dashboard/pages`.
-2. Add the following import statement at the top of your page:
-
-   ```tsx
-    import { useWix } from "@wix/sdk-react";
-    ```
-
-3. Inside the `Index` method, add the following code:
-
-    ```tsx
-    const { fetch } = useWix();
-    ```
-
-4. Add the `fetch` call somewhere in your code.
-
-For example, add a call to action with instructions to click a button to complete setup for your app. Then, when the site owner clicks the button, they will call the fetch method.
-
-If your app contains only one embedded script, the fetch method call should be in the following format:
-
-  ```tsx
-  fetch('https://www.wixapis.com/apps/v1/scripts', {
-    method : 'post',
-    headers : {'content-type':'application/json'},
-    body : JSON.stringify({
-      "properties": {
-        "parameters": {
-          "<your-key-1>": "<your-value-1>",
-          "<your-key-2>": "<your-value-2>",
-        }
-      }
-    })
-  })
-  ```
-
-If your app contains more than one embedded script, you must also pass a `componentId` using the id value defined in your `embedded.json`. In this situation, your call should be in the following format:
-
-  ```tsx
-  fetch('https://www.wixapis.com/apps/v1/scripts', {
-    method : 'post',
-    headers : {'content-type':'application/json'},
-    body : JSON.stringify({
-      "properties": {
-        "parameters": {
-          "<your-key-1>": "<your-value-1>",
-          "<your-key-2>": "<your-value-2>",
-        }
-      },
-      "componentId": <your-component-id>
-    })
-  })
-  ```
-<blockquote class="warning">
-
-__Warning:__
-If your app only has 1 embedded script, don't pass the `componentId` in the request body. This action could lead to your app breaking in production. The `componentId` is only relevant for apps with more than 1 embedded script.
-
-</blockquote>
-
-Ensure that the `parameters` section of the `body` contains all the dynamic parameters in your embedded script. Otherwise, you will get an error and your code will not be embedded.
-
-### Embedding a script as an app developer
-
-You can also call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint from your server once the app is installed on a user's site. This will require an access token obtained through the [OAuth process](https://dev.wix.com/docs/build-apps/build-your-app/authentication/oauth).
-
 ## Referencing local files in your HTML code (Optional)
 
 Wix will host and deploy every file in your project unless you specify otherwise, including any that you add. Your HTML code can reference these files using a relative path. Your HTML code can reference these files using a relative path.
@@ -277,6 +196,86 @@ This CSS applies to your site globally. For example, the following code would ma
     background: red;
   }
   ```
+
+## Prepare your app for production
+
+To finish setting up your embedded script, either you or the site owner must call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint to embed your script and update the values of the dynamic parameters in each app instance.
+
+### Prompting the site owner to embed the code (recommended)
+
+If your app has a dashboard page, you have the option to shift responsibility for this last configuration step onto site owners.
+
+Site owners can call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint using the `fetch` method from the [Wix React SDK](https://dev.wix.com/docs/sdk/api-reference/sdk-react/setup).
+
+>**Note**: If an app has a dashboard page and an embedded script extension, site owners will automatically be directed to the app's dashboard page after installing the app.
+
+This API call is also used to specify the value of any dynamic parameters. For more information about using dynamic parameters see (See [Using dynamic parameters in your HTML code](#using-dynamic-parameters-in-your-html-code-optional)).
+
+To use the `fetch` method in your app's dashboard page:
+
+1. Navigate to your `page.tsx` file in `src/dashboard/pages`.
+2. Add the following import statement at the top of your page:
+
+   ```tsx
+    import { useWix } from "@wix/sdk-react";
+    ```
+
+3. Inside the `Index` method, add the following code:
+
+    ```tsx
+    const { fetch } = useWix();
+    ```
+
+4. Add the `fetch` call somewhere in your code.
+
+For example, add a call to action with instructions to click a button to complete setup for your app. Then, when the site owner clicks the button, they will call the fetch method.
+
+If your app contains only one embedded script, the fetch method call should be in the following format:
+
+  ```tsx
+  fetch('https://www.wixapis.com/apps/v1/scripts', {
+    method : 'post',
+    headers : {'content-type':'application/json'},
+    body : JSON.stringify({
+      "properties": {
+        "parameters": {
+          "<your-key-1>": "<your-value-1>",
+          "<your-key-2>": "<your-value-2>",
+        }
+      }
+    })
+  })
+  ```
+
+If your app contains more than one embedded script, you must also pass a `componentId` using the id value defined in your `embedded.json`. In this situation, your call should be in the following format:
+
+  ```tsx
+  fetch('https://www.wixapis.com/apps/v1/scripts', {
+    method : 'post',
+    headers : {'content-type':'application/json'},
+    body : JSON.stringify({
+      "properties": {
+        "parameters": {
+          "<your-key-1>": "<your-value-1>",
+          "<your-key-2>": "<your-value-2>",
+        }
+      },
+      "componentId": <your-component-id>
+    })
+  })
+  ```
+<blockquote class="warning">
+
+__Warning:__
+If your app only has 1 embedded script, don't pass the `componentId` in the request body. This action could lead to your app breaking in production. The `componentId` is only relevant for apps with more than 1 embedded script.
+
+</blockquote>
+
+Ensure that the `parameters` section of the `body` contains all the dynamic parameters in your embedded script. Otherwise, you will get an error and your code will not be embedded.
+
+### Embedding a script as an app developer
+
+You can also call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint from your server once the app is installed on a user's site. This will require an access token obtained through the [OAuth process](https://dev.wix.com/docs/build-apps/build-your-app/authentication/oauth).
 
 ## Summary
 
