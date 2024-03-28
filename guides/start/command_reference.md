@@ -16,6 +16,7 @@ For a detailed explanation of the process and how to initially create an app, se
 | Category          | Command            | Description                                                  |
 |----------------|--------------------|--------------------------------------------------------------|
 | CLI for Apps   | [dev](#dev)        | Starts a local development environment that serves your app. |
+|                | [generate](#generate)    | Generates an extension for your app                    |
 |                | [build](#build)    | Builds your app.                                             |
 |                | [serve](#serve)    | Serves your built app.                                       |
 |                | [preview](#preview)| Creates an online preview of your built app.                 |
@@ -41,6 +42,16 @@ The development environment is set up for hot reloading, so any changes you make
 | Flag           | Alias     | Description                             |
 | -------------- | --------- | --------------------------------------- |
 | `--https`  | `-s` | Starts your local development server on HTTPS. Use this flag if your browser does not allow iframes that contain HTTP pages within HTTPS pages. |
+
+## generate
+
+```tsx
+wix app generate
+```
+
+Starts a process that guides you through adding an extension to your app. 
+
+After selecting an extension you will be prompted for relevant configuration details, then your extension will be generated in your app's local files.
 
 ## build
 
