@@ -34,7 +34,7 @@ In the terminal:
 2. Run the following command and follow the prompts to create an embedded script extension:
 
 ```tsx
-npm run wix app generate
+npm run generate
 ```
 
 During the creation process you will be prompted to select a **script type** and a **placement**. For this guide, you can make any selection. For more information, see the [script type and placement options](./embedded-script-extension-files-and-code.md#embeddedjson).
