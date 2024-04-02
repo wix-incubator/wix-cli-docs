@@ -38,9 +38,9 @@ The file named `embedded.html` contains the code you wish to inject. Your code w
 Your file structure should look like this:
 
 In your HTML code, you can:
-- [Reference local files](#referencing-local-files-in-your-html-code-optional)
-- [Use dynamic parameters](#using-dynamic-parameters-in-your-html-code-optional)
-- [Add global CSS](#add-global-css-to-your-html-code-optional)
+- [Reference local files](#referencing-local-files-in-your-html-code)
+- [Use dynamic parameters](#using-dynamic-parameters-in-your-html-code)
+- [Add global CSS](#add-global-css-to-your-html-code)
 
 ### Referencing local files in your HTML code
 
