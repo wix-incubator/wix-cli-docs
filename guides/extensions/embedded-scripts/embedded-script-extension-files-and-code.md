@@ -25,7 +25,7 @@ The structure of an embedded script extension in a CLI app is as follows:
                       └── params.dev.json
   ```
 
-These files can be generated in your app using the following command and selecting **Embedded Script extension**:
+These files can be generated in your app by running the following command and selecting **Embedded Script extension**:
 
 ```tsx
 npm run generate
