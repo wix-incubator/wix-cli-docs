@@ -157,7 +157,7 @@ Now that your app is ready for production, you can build your app and create a v
 
 An app version allows you to publish an app to the [Wix App Market](https://www.wix.com/app-market) or install it on a site with a direct install URL.
 
-For more information about building and deploying your app, see [Build and Deploy an App with the CLI](../app-development/build-and-deploy-an-app-with-the-cli.md).
+For more information about the above commands, see [Wix CLI Commands for Apps](https://dev.wix.com/docs/build-apps/developer-tools/cli/wix-cli-for-apps/commands).
 
 ## Summary
 
