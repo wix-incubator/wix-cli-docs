@@ -25,7 +25,11 @@ The structure of an embedded script extension in a CLI app is as follows:
                       └── params.dev.json
   ```
 
->Note: These files can be created quickly using the [generate command]() and selecting **Embedded Script extension**.
+>Note: These files can be created quickly using the following command and selecting **Embedded Script extension**.
+
+```tsx
+wix app generate
+```
 
 ## embedded.html
 
