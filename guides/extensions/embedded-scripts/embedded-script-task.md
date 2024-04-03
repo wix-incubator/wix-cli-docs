@@ -109,7 +109,7 @@ If your app contains only one embedded script, the fetch method call should be i
   })
   ```
 
-If your app contains more than one embedded script, you must also pass a `componentId` using the id value defined in your `embedded.json` file. In this situation, your call should be in the following format:
+If your app contains more than one embedded script, you must also pass a `componentId` using the `id` value defined in your `embedded.json` file. In this situation, your call should be in the following format:
 
   ```tsx
   fetch('https://www.wixapis.com/apps/v1/scripts', {
