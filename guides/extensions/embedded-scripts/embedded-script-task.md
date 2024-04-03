@@ -69,71 +69,115 @@ If your app has a dashboard page, you have the option to shift responsibility fo
 
 >**Note**: If an app has a dashboard page and an embedded script extension, site owners will automatically be directed to the app's dashboard page after installing the app.
 
-Site owners can call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint using the `fetch` method from the [Wix React SDK](https://dev.wix.com/docs/sdk/api-reference/sdk-react/setup).
+Site owners can call [embedScript()](https://dev.wix.com/docs/sdk/backend-modules/app-market/embedded-scripts/embed-script) from the [Wix React SDK](https://dev.wix.com/docs/sdk/core-modules/sdk-react/introduction).
 
 This API call is also used to specify the value of any dynamic parameters. For more information about using dynamic parameters see [Using dynamic parameters in your HTML code](./embedded-script-extension-files-and-code.md#using-dynamic-parameters-in-your-html-code).
 
-To use the `fetch` method in your app's dashboard page:
+To use `embedScript()` in your app's dashboard page:
 
 1. Open the `page.tsx` file in your app’s `src/dashboard/pages` folder.
-2. Add the following import statement at the top of your page:
+1. Add the following import statements at the top of your page:
 
      ```tsx
-      import { useWix } from "@wix/sdk-react";
+      import { useWixModules } from '@wix/sdk-react';
+      import { embeddedScripts } from '@wix/app-market';
       ```
 
-3. Inside the `Index` method, add the following code:
+1. Inside the `Index` method, add the following code:
 
       ```tsx
-      const { fetch } = useWix();
+      cconst { embedScript } = useWixModules(embeddedScripts);
       ```
 
-4. Add the `fetch` call somewhere in your code.
+1. Add the `embedScript()` call somewhere in your code.
 
-For example, add a call to action with instructions to click a button to complete setup for your app. Then, when the site owner clicks the button, they will call the fetch method.
+    For example, add a call to action with instructions to click a button to complete setup for your app. Then, when the site owner clicks the button, they will call the endpoint.
+    
+    If your app contains only one embedded script, the endpoint should be called in the following format:
 
-If your app contains only one embedded script, the fetch method call should be in the following format:
-
-  ```tsx
-  fetch('https://www.wixapis.com/apps/v1/scripts', {
-    method : 'post',
-    headers : {'content-type':'application/json'},
-    body : JSON.stringify({
-      "properties": {
-        "parameters": {
-          "<your-key-1>": "<your-value-1>",
-          "<your-key-2>": "<your-value-2>",
-        }
-      }
+    ```tsx
+    await embedScript({
+       parameters: {
+         "<your-key-1>": "<your-value-1>"
+       }
     })
-  })
-  ```
+    ```
+    <blockquote class="warning">
+    
+    __Warning:__
+    If your app has more than 1 embedded script, you cannot use the Wix React SDK's `embedScript()` endpoint. You must use the REST `Embed Script` endpoint instead. 
 
-If your app contains more than one embedded script, you must also pass a `componentId` using the `id` value defined in your `embedded.json` file. In this situation, your call should be in the following format:
+    <details>
+    
+    <summary> Click to expand instructions on calling the REST Embed Script endpoint</summary>
+    
+    </br> 
+    
+    You can call the REST [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint using the `fetch` method from the [Wix React SDK](https://dev.wix.com/docs/sdk/api-reference/sdk-react/setup).
+    
+    This API call is also used to specify the value of any dynamic parameters. For more information about using dynamic parameters see [Using dynamic parameters in your HTML code](./embedded-script-extension-files-and-code.md#using-dynamic-parameters-in-your-html-code).
+    
+    To use the `fetch` method in your app's dashboard page:
+    
+    1. Open the `page.tsx` file in your app’s `src/dashboard/pages` folder.
+    1. Add the following import statement at the top of your page:
+    
+         ```tsx
+          import { useWix } from "@wix/sdk-react";
+          ```
+    
+    1. Inside the `Index` method, add the following code:
+    
+          ```tsx
+          const { fetch } = useWix();
+          ```
+    
+    1. Add the `fetch` call somewhere in your code.
+    
+          For example, add a call to action with instructions to click a button to complete setup for your app. Then, when the site owner clicks the button, they will call the fetch method.
+          
+          If your app contains only one embedded script, the fetch method call should be in the following format:
+          
+            ```tsx
+            fetch('https://www.wixapis.com/apps/v1/scripts', {
+              method : 'post',
+              headers : {'content-type':'application/json'},
+              body : JSON.stringify({
+                "properties": {
+                  "parameters": {
+                    "<your-key-1>": "<your-value-1>",
+                    "<your-key-2>": "<your-value-2>",
+                  }
+                }
+              })
+            })
+            ```
+          
+          If your app contains more than one embedded script, you must also pass a `componentId` using the `id` value defined in your `embedded.json` file. In this situation, your call should be in the following format:
+        
+          ```tsx
+          fetch('https://www.wixapis.com/apps/v1/scripts', {
+            method : 'post',
+            headers : {'content-type':'application/json'},
+            body : JSON.stringify({
+              "properties": {
+                "parameters": {
+                  "<your-key-1>": "<your-value-1>",
+                  "<your-key-2>": "<your-value-2>",
+                }
+              },
+              "componentId": <your-component-id>
+            })
+          })
+          ```
+        If your app only has 1 embedded script, don't pass the `componentId` in the request body. This action could break your app in production. The `componentId` is only relevant for apps with more than 1 embedded script.
+        
+    </details>
+    </blockquote>
 
-  ```tsx
-  fetch('https://www.wixapis.com/apps/v1/scripts', {
-    method : 'post',
-    headers : {'content-type':'application/json'},
-    body : JSON.stringify({
-      "properties": {
-        "parameters": {
-          "<your-key-1>": "<your-value-1>",
-          "<your-key-2>": "<your-value-2>",
-        }
-      },
-      "componentId": <your-component-id>
-    })
-  })
-  ```
-<blockquote class="warning">
+Ensure that `parameters` contains all the dynamic parameters in your embedded script. Otherwise, you will get an error and your code will not be embedded.
 
-__Warning:__
-If your app only has 1 embedded script, don't pass the `componentId` in the request body. This action could break your app in production. The `componentId` is only relevant for apps with more than 1 embedded script.
-
-</blockquote>
-
-Ensure that the `parameters` section of the `body` contains all the dynamic parameters in your embedded script. Otherwise, you will get an error and your code will not be embedded.
+Although we are setting it up now, the `Embed Script` call will not work until you have created an app version, as documented [below](#step-3--build-and-deploy-your-app). 
 
 #### Embedding a script as an app developer
 
