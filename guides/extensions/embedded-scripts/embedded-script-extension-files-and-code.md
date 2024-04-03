@@ -57,14 +57,7 @@ For example, to reference a file named `local-script.js` in the same directory a
 
 ### Using dynamic parameters in your HTML code
 
-You can embed dynamic parameters in your code to inject custom information per site.
-
-For example:
-
-  ```tsx
-  <meta name = "google-tag" id = "{{googleTag}}"></meta>
-  <script> console.log("Hello {{userName}} from the CLI.");</script>
-  ```
+Dynamic parameters are placeholders in your code that allow for the injection of custom information specific to each site where the code is deployed.
 
 Dynamic parameters must be:
 
@@ -75,6 +68,13 @@ Dynamic parameters must be:
 
 Dynamic parameter values must be strings.
 
+For example, the following code contains the dynamic parameters `googleTag` and `userName`:
+
+  ```tsx
+  <meta name = "google-tag" id = "{{googleTag}}"></meta>
+  <script> console.log("Hello {{userName}} from the CLI.");</script>
+  ```
+
 See [below](#paramsdevjson) how to specify dynamic parameter values to use during development
 
 ### Adding global CSS to your HTML code
@@ -82,7 +82,7 @@ See [below](#paramsdevjson) how to specify dynamic parameter values to use durin
 You can add CSS directly to your `embedded.html` file, or you can reference a CSS stylesheet with a link. For example:
 
   ```tsx
-  <link rel="stylesheet" href="./<your-css-file>.css"/>
+  <link rel="stylesheet" href="./your-css-file.css"/>
   ```
 
 This CSS applies to your site globally. For example, the following code would make the background of every page of your site red:
