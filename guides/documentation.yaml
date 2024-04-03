@@ -41,3 +41,5 @@ apiDoc:
       title: Testing
     - file: ./extensions/embedded-scripts/embedded-script-task.md
       title: Set up an Embedded Script Extension
+    - file: ./extensions/embedded-scripts/embedded-script-extension-files-and-code.md
+      title: Embedded Script Extension Files and Code
