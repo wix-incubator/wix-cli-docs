@@ -179,6 +179,8 @@ Ensure that `parameters` contains all the dynamic parameters in your embedded sc
 
 Although we are setting it up now, the `Embed Script` call will not work until you have created an app version, as documented [below](#step-3--build-and-deploy-your-app). 
 
+For a practical example of this setup, see our [Mixpanel Analytics template](https://github.com/wix/cli-app-templates/tree/master/mixpanel-analytics).
+
 #### Embedding a script as an app developer
 
 You can also call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint from your server once the app is installed on a user's site. This requires an access token obtained through the [OAuth process](https://dev.wix.com/docs/build-apps/build-your-app/authentication/oauth).
