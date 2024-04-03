@@ -106,7 +106,7 @@ This file contains information about your script, and must have the following st
   }
   ```
 
-* `id`  is a unique identifier for your script. a randomly generated GUID.
+* `id`  is a unique identifier for your script. It is a randomly generated GUID.
 * `name` is the name of your script as it will appear in the [Wix Dev Center](https://dev.wix.com/apps/my-apps). It can only contain letters and the hyphen (-) character. A descriptive name will help you identify your embedded script in your Dev Center extensions page.
 * `scriptType` is an enum used by Wix's Cookie Consent Banner tool to determine whether site visitors consent to having your script run during their visit. Possible values are:
   * `"ESSENTIAL"`: Enables site visitors to move around the site and use essential features like secure and private areas crucial to the functioning of the site.
