@@ -127,7 +127,7 @@ This file contains information about your script, and must have the following st
 
 This file specifies dynamic parameter values to use during development.
 
-In production, dynamic parameter values are set after installation by calling the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint.
+In production, dynamic parameter values are set after installation by calling the Embed Script endpoint as explained in [preparing your app for production](./embedded-script-task.md#step-2--prepare-your-app-for-production).
 
 This file includes an object containing key-value pairs for each of your dynamic parameters.
 
