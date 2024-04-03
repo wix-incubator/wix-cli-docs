@@ -135,8 +135,6 @@ If your app only has 1 embedded script, don't pass the `componentId` in the requ
 
 Ensure that the `parameters` section of the `body` contains all the dynamic parameters in your embedded script. Otherwise, you will get an error and your code will not be embedded.
 
-See our [Mixpanel Analytics template](https://github.com/wix/cli-app-templates/tree/master/mixpanel-analytics) for an example of this in practice.
-
 #### Embedding a script as an app developer
 
 You can also call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint from your server once the app is installed on a user's site. This requires an access token obtained through the [OAuth process](https://dev.wix.com/docs/build-apps/build-your-app/authentication/oauth).
