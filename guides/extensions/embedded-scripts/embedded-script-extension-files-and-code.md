@@ -35,8 +35,6 @@ npm run generate
 
 The file named `embedded.html` contains the code you wish to inject. Your code will be added to the page's head or body depending on your configuration.
 
-Your file structure should look like this:
-
 In your HTML code, you can:
 - [Reference local files](#referencing-local-files-in-your-html-code)
 - [Use dynamic parameters](#using-dynamic-parameters-in-your-html-code)
@@ -44,7 +42,7 @@ In your HTML code, you can:
 
 ### Referencing local files in your HTML code
 
-Wix will host and deploy every file in your project unless you specify otherwise, including any that you add. Your HTML code can reference these files using a relative path. Your HTML code can reference these files using a relative path.
+Wix will host and deploy every file in your project unless you specify otherwise, including any that you add. Your HTML code can reference these files using a relative path.
 
 When referencing local files in a `<script>` tag, the tag needs to have `type="module"`.
 
@@ -63,7 +61,7 @@ Dynamic parameters must be:
 
 * Wrapped in double curly braces. For example, `{{userName}}`.
 * Within a quote (") to avoid code evaluation.
-* Set using the [Embedded Scripts API](https://dev.wix.com/api/rest/app-management/apps/embedded-scripts/introduction). This is explained in detail in step 5.
+* Set by embedding the script as explained in [preparing your app for production](./embedded-script-task.md#step-2--prepare-your-app-for-production).
 * Made up only of letters. (No special characters or spaces.)
 
 Dynamic parameter values must be strings.
@@ -127,23 +125,23 @@ This file contains information about your script, and must have the following st
 
 This file specifies dynamic parameter values to use during development.
 
-In production, dynamic parameter values are set after installation by calling the Embed Script endpoint as explained in [preparing your app for production](./embedded-script-task.md#step-2--prepare-your-app-for-production).
+In production, dynamic parameter values are set after installation by embedding the script as explained in [preparing your app for production](./embedded-script-task.md#step-2--prepare-your-app-for-production).
 
 This file includes an object containing key-value pairs for each of your dynamic parameters.
 
-   For example, for the code:
+For example, the code:
 
-    ```tsx
-    <script> console.log("Hello {{userName}} from the CLI. Your Google Tag ID is: {{googleTagId}}."); </script>
-    ```
+```tsx
+<script> console.log("Hello {{userName}} from the CLI. Your Google Tag ID is: {{googleTagId}}."); </script>
+```
 
-    Requires a params.dev.json file in the following format:
+Requires a params.dev.json file in the following format:
 
-    ```tsx
-    {
-      "userName": "Jerry",
-      "googleTagId": "GT-XXXXXXXXX"
-    }
-    ```
+```tsx
+{
+  "userName": "Jerry",
+  "googleTagId": "GT-XXXXXXXXX"
+}
+```
 
 Make sure the keys are the dynamic parameter names in quotes. The values will be assigned to the parameters when testing your script.
