@@ -15,7 +15,7 @@ tags:
 
 # Set up an Embedded Script Extension
 
-An embedded script is an app extension that injects an HTML code fragment into the DOM of your users' sites. Unlike other extensions, embedded scripts are not fully configured during app installation, and require an additional setup step to embed the code fragment in the sites.
+An embedded script is an app extension that injects an HTML code fragment into the DOM of your users' sites. Unlike other extensions, embedded scripts are not fully configured during app installation, and require an additional setup step to embed the code fragment.
 
 Follow the instructions below to:
 
@@ -61,7 +61,7 @@ Upon completion, the extension files will be created in your app directory with 
 
 ## Step 2 | Prepare your app for production
 
-To finish setting up your embedded script, either you or the site owner must call the [Embed Script](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint to embed your script and update the values of the dynamic parameters in each app instance.
+To finish setting up your embedded script, either you or the site owner must call the [`Embed Script`](https://dev.wix.com/docs/rest/api-reference/app-management/apps/embedded-scripts/embed-script) endpoint to embed your script and update the values of the dynamic parameters in each app instance.
 
 #### Prompting the site owner to embed the code (recommended)
 
@@ -78,16 +78,16 @@ To use `embedScript()` in your app's dashboard page:
 1. Open the `page.tsx` file in your app’s `src/dashboard/pages` folder.
 1. Add the following import statements at the top of your page:
 
-     ```tsx
-      import { useWixModules } from '@wix/sdk-react';
-      import { embeddedScripts } from '@wix/app-market';
-      ```
+    ```tsx
+    import { useWixModules } from '@wix/sdk-react';
+    import { embeddedScripts } from '@wix/app-market';
+    ```
 
 1. Inside the `Index` method, add the following code:
 
-      ```tsx
-      cconst { embedScript } = useWixModules(embeddedScripts);
-      ```
+    ```tsx
+    const { embedScript } = useWixModules(embeddedScripts);
+    ```
 
 1. Add the `embedScript()` call somewhere in your code.
 
@@ -191,15 +191,15 @@ Now that your app is ready for production, you can build your app and create a v
 
 1. Run the following command to build your app:
 
-  ```bash
-  npm run build
-  ```
+    ```bash
+    npm run build
+    ```
 
 2. Run the following command and follow the prompts to create an app version:
 
-  ```bash
-  npm run create-version
-  ```
+    ```bash
+    npm run create-version
+    ```
 
 An app version allows you to publish an app to the [Wix App Market](https://www.wix.com/app-market) or install it on a site with a direct install URL.
 
