@@ -33,11 +33,11 @@ In the terminal:
 1. Navigate to your project repo.
 2. Run the following command and follow the prompts to create an embedded script extension:
 
-```tsx
-npm run generate
-```
-
-During the creation process you will be prompted to select a **script type** and a **placement**. For this guide, you can make any selection. For more information, see the [script type and placement options](./embedded-script-extension-files-and-code.md#embeddedjson).
+    ```tsx
+    npm run generate
+    ```
+    
+    During the creation process you will be prompted to select a **script type** and a **placement**. For this guide, you can make any selection. For more information, see the [script type and placement options](./embedded-script-extension-files-and-code.md#embeddedjson).
 
 Upon completion, the extension files will be created in your app directory with the following structure:
 
