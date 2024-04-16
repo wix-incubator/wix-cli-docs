@@ -36,7 +36,9 @@ In the terminal:
     ```tsx
     npm run generate
     ```
-    
+
+    > **Note**: If the command fails, check that your `package.json` includes the "generate": "wix app generate" script. If it's missing, add it and rerun the command. Even if your CLI packages are up to date, your project might have been created with a version of CLI that didn't include the script.
+
     During the creation process you will be prompted to select a **script type** and a **placement**. For this guide, you can make any selection. For more information, see the [script type and placement options](./embedded-script-extension-files-and-code.md#embeddedjson).
 
 Upon completion, the extension files will be created in your app directory with the following structure:
