@@ -73,10 +73,11 @@ An object that defines the behavior of this page in the dashboard sidebar.
 
 Whether the page is shown in the sidebar. If `true`, the page is not shown in the sidebar. Defaults to `false`.
 
+<!---
 ##### sidebar.categoryId (optional)
 
 The ID of the category to associate this page with, as defined in the [sidebar categories configuration](#category-configuration).
-
+--->
 ##### sidebar.priority (optional)
 
 The priority of the page entry in the sidebar. Determines the page location in relation to other app pages. Smaller numbers mean higher priority.
@@ -140,6 +141,7 @@ This app adds 4 pages to the dashboard:
 - Analytics page (`dashboard/pages/products/analytics/page.json`) - Route: `/products/analytics`
 - Orders page (`dashboard/pages/orders/page.json`) - Route: `/orders`
 
+<!---
 ## Sidebar Categories
 
 The dashboard sidebar is divided into categories. Each category is defined by a category ID and a category label. The category ID is used to associate pages with a specific category. The category label is used as the display label of the category under which all the pages that belong to that category can be found.
@@ -195,6 +197,7 @@ The text to display as the category label in the sidebar.
 ##### priority (optional)
 
 The priority of the category in the sidebar. Determines the category location in relation to other app categories. Smaller numbers mean higher priority.
+--->
 
 ## Add a new dashboard page
 
