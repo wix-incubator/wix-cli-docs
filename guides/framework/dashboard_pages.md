@@ -26,7 +26,6 @@ type BackOfficePageConfig = {
   additionalRoutes?: string[];
   sidebar?: {
     disabled?: boolean;
-    categoryId?: string;
     priority?: number;
     whenActive?: {
       selectedPageId?: string;
@@ -43,7 +42,6 @@ Here's an example metadata definition:
   "id": "15a6e3ad-620e-416b-840d-367be43a4fd8",
   "title": "My CLI App Page",
   "sidebar": {
-    "categoryId": "041e3b2a-d25b-47ce-8162-dfdfe0e64785",
     "whenActive": {
       "hideSidebar": true
     }
