@@ -2,7 +2,7 @@
 
 In the Business Buddy app, the pages appear in the dashboard as follows.
 
-![Sidebar pages](../../media/tutorial_sidebar_pages.png)
+![Sidebar pages](../../media/tutorial_sidebar_pages_new.png)
 
 To create this structure, we place dashboard page files in subfolders of the **dashboard/pages** folder
 
