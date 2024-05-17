@@ -7,11 +7,11 @@ In this example, you'll learn how we built an app named Business Buddy. The app 
 The app is built from:
 
 - Frontend: Two dashboard pages
-  - Products page: Allows the user to select a product from the site's store and chat with the AI about it
-  - Settings page: Allows the user to give instructions as to how the AI behaves
+  - Products page: Allows the user to select a product from the site's store and chat with the AI about it.
+  - Settings page: Allows the user to give instructions as to how the AI behaves.
 - Backend: Express Node.js server
-  - Server: A server that responds to product chat requests by calling the OpenAI API and to settings requests by calling the mock database
-  - Database: A mock database that holds the AI behavior settings per user
+  - Server: A server that responds to product chat requests by calling the OpenAI API and to settings requests by calling the mock database.
+  - Database: A mock database that holds the AI behavior settings per user.
 
 The app demonstrates how to:
 
