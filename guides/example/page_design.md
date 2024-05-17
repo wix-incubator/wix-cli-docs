@@ -1,6 +1,6 @@
 # Page Design
 
-In the Business Buddy app, the **Products** page looks like this.
+In the Business Buddy app, the **Products** page looks like this:
 
 ![Business Buddy Product Chat](../../media/tutorial_chat.png)
 
